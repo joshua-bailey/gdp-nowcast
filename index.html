@@ -576,13 +576,46 @@
             font-style: italic;
             margin-top: 8px;
         }
+        .faq-section h3 {
+            color: #6C757D;
+        }
+        .faq-entry {
+            border-bottom: 1px solid #eee;
+            padding: 10px 0;
+        }
+        .faq-entry:last-child {
+            border-bottom: none;
+        }
+        .faq-entry summary {
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            color: #333;
+            padding: 4px 0;
+        }
+        .faq-entry summary:hover {
+            color: #2E86AB;
+        }
+        .faq-entry p {
+            margin: 8px 0 4px 0;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
+        .faq-entry ul {
+            margin: 6px 0 4px 0;
+            padding-left: 20px;
+            font-size: 13px;
+            color: #555;
+            line-height: 1.5;
+        }
 
     </style>
 </head>
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: February 19, 2026 16:54 |
+        <p class="timestamp">Last updated: February 19, 2026 17:03 |
            Week: 2026-W08</p>
     </div>
 
@@ -1553,7 +1586,7 @@
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-02-19 16:54)</span></p>
+            <span class="release-as-of">(as of 2026-02-19 17:03)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -2999,6 +3032,41 @@
     </script>
     </div>
         </div>
+    </div>
+    
+
+    
+    <div class="card faq-section">
+        <h3>Frequently Asked Questions</h3>
+        
+            <details class="faq-entry">
+                <summary>What does this dashboard show?</summary>
+                <p>This dashboard presents a Dynamic Factor Model (DFM) nowcast of US real GDP growth (annualised quarterly rate). The model combines 18 monthly economic indicators with quarterly GDP data using Kalman filtering to produce an estimate that updates weekly as new data arrives.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>How do I read the weekly evolution chart?</summary>
+                <p>The top panel shows the nowcast point estimate (line) with confidence interval bands around it. The bottom panel shows stacked bars representing which data categories drove each week's revision to the nowcast. The diamond marker shows the net change for the week across all categories.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>What does "Re-estimation" mean?</summary>
+                <p>Re-estimation is <em>not</em> data revisions. It is the Kalman smoother backward-pass residual &mdash; the portion of the nowcast movement not explained by any specific data release or revision. When new data arrives, the model re-estimates the entire factor path, creating small secondary effects beyond the direct data impact. This residual captures those indirect effects.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>How are data revisions handled?</summary>
+                <p>Two views in the dashboard treat revisions differently:<ul><li><strong>Weekly evolution table:</strong> Each row is one newly published data point. Revisions to previously released data are pooled together into a single "Revisions &amp; re-estimation" row per week.</li><li><strong>Cumulative Impact by Series</strong> (in Data Release Impact Detail): Each series' bar includes both its initial releases and any subsequent revisions to that series. Only the Kalman smoother residual is separated into its own "Re-estimation" bar.</li></ul></p>
+            </details>
+            <details class="faq-entry">
+                <summary>What do the confidence bands show?</summary>
+                <p>The shaded bands show 50%, 70%, and 90% prediction intervals derived from the Kalman smoother covariance matrix. They reflect the model's uncertainty around the point nowcast, widening when less data is available for the target quarter.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>How is the backtest computed?</summary>
+                <p>The backtest is pseudo real-time: for each historical quarter, the model is re-estimated using only data that was available at the time (reconstructed via FRED ALFRED vintages), with no look-ahead. The nowcast is compared against the BEA advance GDP estimate to compute RMSE, MAE, and directional accuracy.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>What is the NY Fed comparison?</summary>
+                <p>The NY Fed Staff Nowcast uses a similar DFM methodology. Reference metrics are from their published evaluation covering 2006 Q2 &ndash; 2024 Q4. The comparison is approximate because the two models use different series selections and factor structures.</p>
+            </details>
     </div>
     
 </body>
