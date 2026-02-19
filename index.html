@@ -620,7 +620,7 @@
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: February 19, 2026 18:01 |
+        <p class="timestamp">Last updated: February 19, 2026 18:11 |
            Week: 2026-W08</p>
     </div>
 
@@ -670,8 +670,8 @@
     <div id="nyfed-chart-next_release" style="width:100%;"></div>
     <script>
     (function() {
-        var data = [{"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [-0.6477036819866515, -0.6477036819866515, -0.5701674054738715, -0.41607086683501704, -0.34483262071223697, -0.3976889281395528, -0.3976889281395528, -0.42679118399098215, -0.5438880559963128], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [5.284651592090004, 5.284651592090004, 5.325689422788855, 5.443672198755742, 5.508337267380924, 5.44391756982669, 5.44391756982669, 5.411910674568381, 5.2868962321530155], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.06)", "name": "50/70/90% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0.44946537469912684, 0.44946537469912684, 0.5202513870227143, 0.66766880731926, 0.7376913664810816, 0.6826964491338441, 0.6826964491338441, 0.653056990041742, 0.5344957901503216], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [4.187482535404226, 4.187482535404226, 4.23527063029227, 4.359932524601464, 4.4258132801876044, 4.363532192553293, 4.363532192553293, 4.332062500535657, 4.208512386006381], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "70% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [1.1021612201907947, 1.1021612201907947, 1.1689315620346061, 1.3123756358655299, 1.3816749939636677, 1.3254078371184657, 1.3254078371184657, 1.2954488007276461, 1.1760164855583528], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [3.534786689912558, 3.534786689912558, 3.586590455280378, 3.7152256960551946, 3.7818296527050186, 3.720820804568671, 3.720820804568671, 3.689670689849753, 3.5669916905983503], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [2.3184739550516764, 2.3184739550516764, 2.377761008657492, 2.5138006659603622, 2.581752323334343, 2.5231143208435682, 2.5231143208435682, 2.4925597452886996, 2.3715040880783516], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, -0.013039774744226615, 0, 0, 0, 0, 0.00115458268795232, 0], "type": "bar", "name": "Labor", "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0.02148087431986438, 0, 0, 0, 0, 0], "type": "bar", "name": "Survey", "marker": {"color": "#A23B72"}, "hovertemplate": "Survey: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0.0005514442356752925, 0.013476117403316976, 0, 0.0978855133313426, 0, 0, -0.04722046340000516], "type": "bar", "name": "Manufacturing", "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0.05032697115553189, 0.10909541639950857, 0, 0, 0.0006117773919844212, 0], "type": "bar", "name": "Consumption", "marker": {"color": "#28A745"}, "hovertemplate": "Consumption: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, -0.0012262538399351389, 0, 0, 0.044972784624916606, 0, 0, 0.07683820394206846], "type": "bar", "name": "Housing", "marker": {"color": "#6C757D"}, "hovertemplate": "Housing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0.0730016379543021, 0, 0, -0.20149630044703404, 0, 0, -0.18087832245445096], "type": "bar", "name": "Trade", "marker": {"color": "#E36414"}, "hovertemplate": "Trade: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0.050755694424156644, -0.019265859888836875, 0, 0, -0.03232093563480536, 0], "type": "bar", "name": "Prices", "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, -0.021177574070752422, 0, 0, 0, 0], "type": "bar", "name": "Output", "marker": {"color": "#333333"}, "hovertemplate": "Output: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, 0, 0, 0, 0, 0.03020492470203967], "type": "bar", "name": "Re-estimation", "marker": {"color": "#8B8682"}, "hovertemplate": "Re-estimation: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0.0, 0.0, 0.059287053605815654, 0.13603965730287015, 0.0679516573739809, -0.05863800249077489, 0.0, -0.030554575554868624, -0.12105565721034806], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
-        var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 450, "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.35, 1.0], "anchor": "x2", "range": [-0.770824500974003, 6.123941362317681]}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.28], "zeroline": true, "zerolinecolor": "#333", "anchor": "x"}};
+        var data = [{"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [-0.4165009178652195, -0.4165009178652195, -0.4165009178652195, -0.714067953923887, -0.641074386615053, -0.6327448895873107, -0.3974732045540681, -0.7158719589817211, -0.6477036819866515, -0.6477036819866515, -0.5701674054738715, -0.41607086683501704, -0.34483262071223697, -0.3976889281395528, -0.3976889281395528, -0.42679118399098215, -0.5438880559963128], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [5.6095616802531385, 5.6095616802531385, 5.6095616802531385, 5.563195210254273, 5.55310156224183, 5.460784593956017, 5.6707878867642005, 5.4209463042030865, 5.284651592090004, 5.284651592090004, 5.325689422788855, 5.443672198755742, 5.508337267380924, 5.44391756982669, 5.44391756982669, 5.411910674568381, 5.2868962321530155], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.06)", "name": "50/70/90% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0.6979989916729927, 0.6979989916729927, 0.6979989916729927, 0.4468906512536661, 0.5045175189221314, 0.4942327923733838, 0.7248311736713153, 0.41911183645836414, 0.44946537469912684, 0.44946537469912684, 0.5202513870227143, 0.66766880731926, 0.7376913664810816, 0.6826964491338441, 0.6826964491338441, 0.653056990041742, 0.5344957901503216], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [4.495061770714926, 4.495061770714926, 4.495061770714926, 4.4022366050767205, 4.4075096567046455, 4.333806911995322, 4.5484835085388164, 4.285962508763001, 4.187482535404226, 4.187482535404226, 4.23527063029227, 4.359932524601464, 4.4258132801876044, 4.363532192553293, 4.363532192553293, 4.332062500535657, 4.208512386006381], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "70% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [1.3610048031509239, 1.3610048031509239, 1.3610048031509239, 1.1375343162109488, 1.1860196746898601, 1.1646615166390177, 1.3924797922511656, 1.0943033244701053, 1.1021612201907947, 1.1021612201907947, 1.1689315620346061, 1.3123756358655299, 1.3816749939636677, 1.3254078371184657, 1.3254078371184657, 1.2954488007276461, 1.1760164855583528], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [3.832055959236995, 3.832055959236995, 3.832055959236995, 3.711592940119438, 3.726007500936917, 3.6633781877296885, 3.880834889958966, 3.61077102075126, 3.534786689912558, 3.534786689912558, 3.586590455280378, 3.7152256960551946, 3.7818296527050186, 3.720820804568671, 3.720820804568671, 3.689670689849753, 3.5669916905983503], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [2.5965303811939595, 2.5965303811939595, 2.5965303811939595, 2.424563628165193, 2.4560135878133886, 2.414019852184353, 2.636657341105066, 2.3525371726106825, 2.3184739550516764, 2.3184739550516764, 2.377761008657492, 2.5138006659603622, 2.581752323334343, 2.5231143208435682, 2.5231143208435682, 2.4925597452886996, 2.3715040880783516], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0.12296852829237592, 0, 0, 0, -0.009308407090937713, 0, 0, -0.013039774744226615, 0, 0, 0, 0, 0.00115458268795232, 0], "type": "bar", "name": "Labor", "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0.30019741776308767, 0, 0, 0, -0.09068423101928692, 0, 0, 0, 0.02148087431986438, 0, 0, 0, 0, 0], "type": "bar", "name": "Survey", "marker": {"color": "#A23B72"}, "hovertemplate": "Survey: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, -0.5040729186698165, 0.05354107504877318, -0.014128768361571979, 0, 0, -0.008077421701244128, 0, 0.0005514442356752925, 0.013476117403316976, 0, 0.0978855133313426, 0, 0, -0.04722046340000516], "type": "bar", "name": "Manufacturing", "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, -0.022091115400577566, -0.01405288365186454, 0, 0.13564134015645554, -0.007640475970761601, 0, 0, 0.05032697115553189, 0.10909541639950857, 0, 0, 0.0006117773919844212, 0], "type": "bar", "name": "Consumption", "marker": {"color": "#28A745"}, "hovertemplate": "Consumption: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0012262538399351389, 0, 0, 0.044972784624916606, 0, 0, 0.07683820394206846], "type": "bar", "name": "Housing", "marker": {"color": "#6C757D"}, "hovertemplate": "Housing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, -0.09105978041441332, 0, 0, 0.222637488920713, 0, 0, 0, 0.0730016379543021, 0, 0, -0.20149630044703404, 0, 0, -0.18087832245445096], "type": "bar", "name": "Trade", "marker": {"color": "#E36414"}, "hovertemplate": "Trade: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, 0, -0.013812083615599113, 0, -0.3197688705406144, -0.009053496047295556, 0, 0, 0.050755694424156644, -0.019265859888836875, 0, 0, -0.03232093563480536, 0], "type": "bar", "name": "Prices", "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, 0, 0, 0, 0, -0.009291823839704812, 0, 0, 0, -0.021177574070752422, 0, 0, 0, 0], "type": "bar", "name": "Output", "marker": {"color": "#333333"}, "hovertemplate": "Output: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.03020492470203967], "type": "bar", "name": "Re-estimation", "marker": {"color": "#8B8682"}, "hovertemplate": "Re-estimation: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Oct 27", "Nov 03", "Nov 10", "Nov 17", "Nov 24", "Dec 01", "Dec 08", "Dec 15", "Dec 22", "Dec 29", "Jan 05", "Jan 12", "Jan 19", "Jan 26", "Feb 02", "Feb 09", "Feb 16"], "y": [0.0, 0.0, 0.0, -0.1719667530287663, 0.031449959648195414, -0.04199373562903563, 0.222637488920713, -0.2841201684943835, -0.0340632175590061, 0.0, 0.059287053605815654, 0.13603965730287015, 0.0679516573739809, -0.05863800249077489, 0.0, -0.030554575554868624, -0.12105565721034806], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
+        var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 450, "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.35, 1.0], "anchor": "x2", "range": [-0.8436051558966395, 6.309453871338793]}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.28], "zeroline": true, "zerolinecolor": "#333", "anchor": "x"}};
         Plotly.newPlot('nyfed-chart-next_release', data, layout, {responsive: true});
         var chartEl = document.getElementById('nyfed-chart-next_release');
         var tableWrapper = chartEl.closest('.nyfed-chart-container');
@@ -989,6 +989,315 @@
                     <td></td>
                     <td class="positive">+0.054pp</td>
                 </tr>
+                
+            <tr class="week-heading" data-week-idx="8">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Dec 22 (2025-W52)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#333333;"></span> Real GDP</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.009pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.002pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.003pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.005pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.002pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 23</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.001pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 26</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="negative">-0.032pp</td>
+                </tr>
+                
+            <tr class="week-heading" data-week-idx="9">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Dec 15 (2025-W51)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Dec 15</td>
+                    <td><span class="cat-dot" style="background:#A23B72;"></span> Empire State Mfg Survey</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.096pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 16</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.106pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 16</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Unemployment Rate</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.059pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 16</td>
+                    <td><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.048pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 16</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.044pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 16</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Unemployment Rate</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.012pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 18</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.074pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 18</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.140pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 18</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.028pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 18</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.077pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 19</td>
+                    <td><span class="cat-dot" style="background:#A23B72;"></span> U Mich Consumer Sentiment</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.005pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 19</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="positive">+0.164pp</td>
+                </tr>
+                
+            <tr class="week-heading" data-week-idx="10">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Dec 08 (2025-W50)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Dec 11</td>
+                    <td><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.439pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 11</td>
+                    <td><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.072pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 12</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="positive">+0.590pp</td>
+                </tr>
+                
+            <tr class="week-heading" data-week-idx="11">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Dec 01 (2025-W49)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Dec 03</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.002pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 03</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.001pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 05</td>
+                    <td><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.004pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 05</td>
+                    <td><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.001pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 05</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.004pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 05</td>
+                    <td><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.001pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Dec 05</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="negative">-0.038pp</td>
+                </tr>
+                
+            <tr class="week-heading" data-week-idx="12">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Nov 24 (2025-W48)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Nov 25</td>
+                    <td><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.001pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 26</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.008pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 28</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="positive">+0.040pp</td>
+                </tr>
+                
+            <tr class="week-heading" data-week-idx="13">
+                <td colspan="4" style="font-weight:700; background:#e9ecef;">
+                    w/c Nov 17 (2025-W47)
+                </td>
+            </tr>
+            
+                <tr>
+                    <td>Nov 17</td>
+                    <td><span class="cat-dot" style="background:#A23B72;"></span> Empire State Mfg Survey</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.414pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 19</td>
+                    <td><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.079pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 19</td>
+                    <td><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.712pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 20</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.109pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 20</td>
+                    <td><span class="cat-dot" style="background:#2E86AB;"></span> Unemployment Rate</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.121pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 21</td>
+                    <td><span class="cat-dot" style="background:#A23B72;"></span> U Mich Consumer Sentiment</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.113pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Nov 21</td>
+                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td></td>
+                    <td class="positive">+0.089pp</td>
+                </tr>
                 </tbody>
             </table>
         </div>
@@ -1288,7 +1597,7 @@
                 </span></div>
             </div>
             <div id="graduated-chart-0" style="width:100%;height:300px;"></div>
-            <script>Plotly.newPlot("graduated-chart-0", [{"x": ["2026-02-19"], "y": [4.282379361041678], "mode": "markers", "name": "Current model: 4.28%", "marker": {"size": 12, "color": "#2E86AB", "symbol": "diamond"}, "hovertemplate": "4.28% SAAR<extra>Current model</extra>"}], {"height": 300, "margin": {"l": 50, "r": 120, "t": 30, "b": 40}, "plot_bgcolor": "white", "paper_bgcolor": "#f8f9fa", "xaxis": {"type": "date", "showgrid": false}, "yaxis": {"title": "% SAAR", "gridcolor": "#eee"}, "legend": {"orientation": "h", "yanchor": "bottom", "y": 1.02, "xanchor": "left", "x": 0, "font": {"size": 11}}, "shapes": [{"type": "line", "x0": "2026-02-19", "x1": "2026-02-19", "y0": 4.251129745376981, "y1": 4.251129745376981, "line": {"color": "#28A745", "width": 1.5, "dash": "dash"}}, {"type": "line", "x0": "2026-02-19", "x1": "2026-02-19", "y0": 4.282379361041974, "y1": 4.282379361041974, "line": {"color": "#F18F01", "width": 1.5, "dash": "dash"}}, {"type": "line", "x0": "2025-12-23", "x1": "2025-12-23", "y0": 0, "y1": 1, "yref": "paper", "line": {"color": "#999", "width": 1, "dash": "dot"}}], "annotations": [{"x": "2026-02-19", "y": 4.251129745376981, "xanchor": "left", "yanchor": "middle", "text": " Advance: 4.25%", "showarrow": false, "font": {"size": 11, "color": "#28A745", "family": "sans-serif"}}, {"x": "2026-02-19", "y": 4.282379361041974, "xanchor": "left", "yanchor": "middle", "text": " Second: 4.28%", "showarrow": false, "font": {"size": 11, "color": "#F18F01", "family": "sans-serif"}}, {"x": "2025-12-23", "y": 1, "yref": "paper", "xanchor": "center", "yanchor": "bottom", "text": "Advance", "showarrow": false, "font": {"size": 10, "color": "#999"}}], "hovermode": "x unified"}, {responsive: true, displayModeBar: false});</script>
+            <script>Plotly.newPlot("graduated-chart-0", [{"x": ["2025-07-28", "2025-08-04", "2025-08-11", "2025-08-18", "2025-08-25", "2025-09-01", "2025-09-08", "2025-09-15", "2025-09-22", "2025-09-29", "2025-10-06", "2025-10-13", "2025-10-20", "2025-10-27", "2025-11-03", "2025-11-10", "2025-11-17", "2025-11-24", "2025-12-01", "2025-12-08", "2025-12-15", "2025-12-22", "2025-12-29", "2026-01-05", "2026-01-12", "2026-01-19", "2026-01-26", "2026-02-02", "2026-02-09", "2026-02-16", "2026-02-16", "2026-02-09", "2026-02-02", "2026-01-26", "2026-01-19", "2026-01-12", "2026-01-05", "2025-12-29", "2025-12-22", "2025-12-15", "2025-12-08", "2025-12-01", "2025-11-24", "2025-11-17", "2025-11-10", "2025-11-03", "2025-10-27", "2025-10-20", "2025-10-13", "2025-10-06", "2025-09-29", "2025-09-22", "2025-09-15", "2025-09-08", "2025-09-01", "2025-08-25", "2025-08-18", "2025-08-11", "2025-08-04", "2025-07-28"], "y": [4.278779007541965, 4.206328893649945, 5.178912097404922, 5.230891466793345, 5.332829993847213, 5.362978085410764, 5.390682657806608, 4.683663401094162, 4.813204205463567, 4.813204205463567, 4.813204205463567, 4.813204205463567, 4.852789298982385, 4.852789298982385, 4.852789298982385, 4.852789298982385, 4.753614365030387, 4.740435429143635, 4.800023592591575, 4.863566223426693, 4.856689612552438, 6.263039497135506, 6.263039497135506, 6.25147091985867, 6.2465709384613906, 6.265190862505694, 6.265190862505694, 6.265190862505694, 6.263058829283644, 6.266273964986835, 2.747487495385206, 2.7442723596820153, 2.746404392904065, 2.746404392904065, 2.746404392904065, 2.7277844688597614, 2.7326844502570413, 2.7440724139238872, 2.7440724139238872, -0.9745643849405514, -0.9676877740662966, -1.03365877215706, -1.1030693572001768, -1.1000229623820037, -1.017873109656645, -1.017873109656645, -1.017873109656645, -1.017873109656645, -1.064728219519402, -1.064728219519402, -1.064728219519402, -1.064728219519402, -1.2015674716339197, 0.4110892672461324, 0.3801651382738571, 0.3256122598273987, 0.21605900141452006, 0.15748293901782295, -0.3905874977192383, -0.3248547221469813], "fill": "toself", "fillcolor": "rgba(46,134,171,0.12)", "line": {"color": "rgba(0,0,0,0)"}, "name": "90% CI", "showlegend": true, "hoverinfo": "skip"}, {"x": ["2025-07-28", "2025-08-04", "2025-08-11", "2025-08-18", "2025-08-25", "2025-09-01", "2025-09-08", "2025-09-15", "2025-09-22", "2025-09-29", "2025-10-06", "2025-10-13", "2025-10-20", "2025-10-27", "2025-11-03", "2025-11-10", "2025-11-17", "2025-11-24", "2025-12-01", "2025-12-08", "2025-12-15", "2025-12-22", "2025-12-29", "2026-01-05", "2026-01-12", "2026-01-19", "2026-01-26", "2026-02-02", "2026-02-09", "2026-02-16"], "y": [1.9769621426974922, 1.9078706979653535, 2.668197518211372, 2.7234752341039323, 2.8292211268373055, 2.8715716118423105, 2.9008859625263703, 1.7410479647301207, 1.8742379929720825, 1.8742379929720825, 1.8742379929720825, 1.8742379929720825, 1.9174580946628699, 1.9174580946628699, 1.9174580946628699, 1.9174580946628699, 1.8267957013241916, 1.818683035971729, 1.8831824102172576, 1.9479392246801983, 1.9410626138059435, 4.2511297453771135, 4.2511297453771135, 4.2511297453771135, 4.2511297453771135, 4.282379361041677, 4.282379361041677, 4.282379361041677, 4.282379361041679, 4.282379361041677], "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2}, "marker": {"size": 5, "color": "#2E86AB"}, "hovertemplate": "%{y:.2f}% SAAR<extra>Nowcast</extra>"}, {"x": ["2026-02-19"], "y": [4.282379361041678], "mode": "markers", "name": "Current model: 4.28%", "marker": {"size": 12, "color": "#2E86AB", "symbol": "diamond"}, "hovertemplate": "4.28% SAAR<extra>Current model</extra>"}], {"height": 300, "margin": {"l": 50, "r": 120, "t": 30, "b": 40}, "plot_bgcolor": "white", "paper_bgcolor": "#f8f9fa", "xaxis": {"type": "date", "showgrid": false}, "yaxis": {"title": "% SAAR", "gridcolor": "#eee"}, "legend": {"orientation": "h", "yanchor": "bottom", "y": 1.02, "xanchor": "left", "x": 0, "font": {"size": 11}}, "shapes": [{"type": "line", "x0": "2025-07-28", "x1": "2026-02-19", "y0": 4.251129745376981, "y1": 4.251129745376981, "line": {"color": "#28A745", "width": 1.5, "dash": "dash"}}, {"type": "line", "x0": "2025-07-28", "x1": "2026-02-19", "y0": 4.282379361041974, "y1": 4.282379361041974, "line": {"color": "#F18F01", "width": 1.5, "dash": "dash"}}, {"type": "line", "x0": "2025-12-23", "x1": "2025-12-23", "y0": 0, "y1": 1, "yref": "paper", "line": {"color": "#999", "width": 1, "dash": "dot"}}], "annotations": [{"x": "2026-02-19", "y": 4.251129745376981, "xanchor": "left", "yanchor": "middle", "text": " Advance: 4.25%", "showarrow": false, "font": {"size": 11, "color": "#28A745", "family": "sans-serif"}}, {"x": "2026-02-19", "y": 4.282379361041974, "xanchor": "left", "yanchor": "middle", "text": " Second: 4.28%", "showarrow": false, "font": {"size": 11, "color": "#F18F01", "family": "sans-serif"}}, {"x": "2025-12-23", "y": 1, "yref": "paper", "xanchor": "center", "yanchor": "bottom", "text": "Advance", "showarrow": false, "font": {"size": 10, "color": "#999"}}], "hovermode": "x unified"}, {responsive: true, displayModeBar: false});</script>
             <div class="graduated-summary">Model vs advance: +0.03pp</div>
         </div>
         
@@ -1299,7 +1608,7 @@
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-02-19 18:01)</span></p>
+            <span class="release-as-of">(as of 2026-02-19 18:11)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -1462,52 +1771,115 @@
                     
                 <div class="detail-section">
                     <h4>2025-Q4 - Series-Level Impacts</h4>
-                    <div class="cat-key"><span class="cat-key-item"><span class="cat-dot" style="background:#2E86AB;"></span> Labor</span><span class="cat-key-item"><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</span><span class="cat-key-item"><span class="cat-dot" style="background:#28A745;"></span> Consumption</span><span class="cat-key-item"><span class="cat-dot" style="background:#6C757D;"></span> Housing</span><span class="cat-key-item"><span class="cat-dot" style="background:#E36414;"></span> Trade</span><span class="cat-key-item"><span class="cat-dot" style="background:#C73E1D;"></span> Prices</span><span class="cat-key-item"><span class="cat-dot" style="background:#333333;"></span> Output</span></div>
+                    <div class="cat-key"><span class="cat-key-item"><span class="cat-dot" style="background:#2E86AB;"></span> Labor</span><span class="cat-key-item"><span class="cat-dot" style="background:#A23B72;"></span> Survey</span><span class="cat-key-item"><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</span><span class="cat-key-item"><span class="cat-dot" style="background:#28A745;"></span> Consumption</span><span class="cat-key-item"><span class="cat-dot" style="background:#6C757D;"></span> Housing</span><span class="cat-key-item"><span class="cat-dot" style="background:#E36414;"></span> Trade</span><span class="cat-key-item"><span class="cat-dot" style="background:#C73E1D;"></span> Prices</span><span class="cat-key-item"><span class="cat-dot" style="background:#333333;"></span> Output</span></div>
 
                     <div class="cumulative-series">
                         <h5>Cumulative Impact by Series</h5>
                         <div class="series-impact-list">
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Durable Goods Orders</span>
+                        <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
+                        <span class="series-name">Exports</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 16.283451680419706%; float: right"></div>
+                            <div class="series-bar negative" style="width: 57.58552641630976%; float: left"></div>
                         </div>
-                        <span class="series-value positive">+0.16pp</span>
+                        <span class="series-value negative">-0.58pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
                         <span class="series-name">Imports</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 15.936647429823086%; float: left"></div>
+                            <div class="series-bar positive" style="width: 39.80599877222148%; float: right"></div>
                         </div>
-                        <span class="series-value negative">-0.16pp</span>
+                        <span class="series-value positive">+0.40pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
+                        <span class="series-name">Durable Goods Orders</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 36.42722413212386%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.36pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
+                        <span class="series-name">Empire State Mfg Survey</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar positive" style="width: 33.96131822630729%; float: right"></div>
+                        </div>
+                        <span class="series-value positive">+0.34pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
+                        <span class="series-name">Core CPI</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 21.154774902519872%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.21pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#2E86AB;" title="Labor"></span>
+                        <span class="series-name">Unemployment Rate</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar positive" style="width: 17.524920482466076%; float: right"></div>
+                        </div>
+                        <span class="series-value positive">+0.18pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
+                        <span class="series-name">Retail Sales</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar positive" style="width: 16.448897330339427%; float: right"></div>
+                        </div>
+                        <span class="series-value positive">+0.16pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
                         <span class="series-name">Personal Income</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 15.350819691809651%; float: right"></div>
+                            <div class="series-bar positive" style="width: 15.299612441501145%; float: right"></div>
                         </div>
                         <span class="series-value positive">+0.15pp</span>
                     </div>
                     
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
-                        <span class="series-name">Exports</span>
+                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
+                        <span class="series-name">U Mich Consumer Sentiment</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 15.000651064895218%; float: left"></div>
+                            <div class="series-bar negative" style="width: 10.86191211994071%; float: left"></div>
                         </div>
-                        <span class="series-value negative">-0.15pp</span>
+                        <span class="series-value negative">-0.11pp</span>
                     </div>
                     
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Capacity Utilization</span>
+                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
+                        <span class="series-name">CPI All Items</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 6.92623959569703%; float: left"></div>
+                            <div class="series-bar negative" style="width: 8.97863627260644%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.09pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#2E86AB;" title="Labor"></span>
+                        <span class="series-name">Nonfarm Payrolls</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 7.347427567949687%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.07pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
+                        <span class="series-name">Real Personal Consumption</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 6.559406763812903%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.07pp</span>
                     </div>
@@ -1531,81 +1903,18 @@
                     </div>
                     
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
-                        <span class="series-name">Retail Sales</span>
+                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
+                        <span class="series-name">Capacity Utilization</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 5.093874854751632%; float: right"></div>
-                        </div>
-                        <span class="series-value positive">+0.05pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
-                        <span class="series-name">Real Personal Consumption</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 4.441278051858796%; float: left"></div>
+                            <div class="series-bar negative" style="width: 3.9313965846586134%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.04pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
-                        <span class="series-name">Re-estimation</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 3.0204924702039673%; float: right"></div>
-                        </div>
-                        <span class="series-value positive">+0.03pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Industrial Production</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 2.8879509276897037%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.03pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
-                        <span class="series-name">Empire State Mfg Survey</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 2.148087431986438%; float: right"></div>
-                        </div>
-                        <span class="series-value positive">+0.02pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#333333;" title="Output"></span>
-                        <span class="series-name">Real GDP</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 2.117757407075242%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.02pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#2E86AB;" title="Labor"></span>
-                        <span class="series-name">Unemployment Rate</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 1.7667196221528%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.02pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
-                        <span class="series-name">Core PCE</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 1.3199259214706924%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.01pp</span>
                     </div>
                     </div>
                     </div>
 
                     <details class="impact-details">
-                        <summary>View All Data Releases (36 observations)</summary>
+                        <summary>View All Data Releases (75 observations)</summary>
                         <table class="impact-table">
                             <thead>
                                 <tr>
@@ -1617,6 +1926,270 @@
                                 </tr>
                             </thead>
                             <tbody>
+                    <tr>
+                        <td>Nov 17</td>
+                        <td>Empire State Mfg Survey</td>
+                        <td>Nov 2025</td>
+                        <td class="positive">+0.414pp</td>
+                        <td><span class="cat-dot" style="background:#A23B72;"></span> Survey</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 19</td>
+                        <td>Exports</td>
+                        <td>Aug 2025</td>
+                        <td class="negative">-0.079pp</td>
+                        <td><span class="cat-dot" style="background:#E36414;"></span> Trade</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 19</td>
+                        <td>Imports</td>
+                        <td>Aug 2025</td>
+                        <td class="negative">-0.712pp</td>
+                        <td><span class="cat-dot" style="background:#E36414;"></span> Trade</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 20</td>
+                        <td>Nonfarm Payrolls</td>
+                        <td>Sep 2025</td>
+                        <td class="positive">+0.109pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 20</td>
+                        <td>Unemployment Rate</td>
+                        <td>Sep 2025</td>
+                        <td class="positive">+0.121pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 21</td>
+                        <td>U Mich Consumer Sentiment</td>
+                        <td>Nov 2025</td>
+                        <td class="negative">-0.113pp</td>
+                        <td><span class="cat-dot" style="background:#A23B72;"></span> Survey</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 25</td>
+                        <td>Retail Sales</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.001pp</td>
+                        <td><span class="cat-dot" style="background:#28A745;"></span> Consumption</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 26</td>
+                        <td>Durable Goods Orders</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.008pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 03</td>
+                        <td>Industrial Production</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.002pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 03</td>
+                        <td>Capacity Utilization</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.001pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 05</td>
+                        <td>Real Personal Consumption</td>
+                        <td>Sep 2025</td>
+                        <td class="positive">+0.004pp</td>
+                        <td><span class="cat-dot" style="background:#28A745;"></span> Consumption</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 05</td>
+                        <td>Personal Income</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.001pp</td>
+                        <td><span class="cat-dot" style="background:#28A745;"></span> Consumption</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 05</td>
+                        <td>PCE Price Index</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.004pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 05</td>
+                        <td>Core PCE</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.001pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 11</td>
+                        <td>Exports</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.439pp</td>
+                        <td><span class="cat-dot" style="background:#E36414;"></span> Trade</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 11</td>
+                        <td>Imports</td>
+                        <td>Sep 2025</td>
+                        <td class="positive">+0.072pp</td>
+                        <td><span class="cat-dot" style="background:#E36414;"></span> Trade</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 15</td>
+                        <td>Empire State Mfg Survey</td>
+                        <td>Dec 2025</td>
+                        <td class="negative">-0.096pp</td>
+                        <td><span class="cat-dot" style="background:#A23B72;"></span> Survey</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 16</td>
+                        <td>Nonfarm Payrolls</td>
+                        <td>Oct 2025</td>
+                        <td class="negative">-0.106pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 16</td>
+                        <td>Unemployment Rate</td>
+                        <td>Oct 2025</td>
+                        <td class="positive">+0.059pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 16</td>
+                        <td>Retail Sales</td>
+                        <td>Oct 2025</td>
+                        <td class="negative">-0.048pp</td>
+                        <td><span class="cat-dot" style="background:#28A745;"></span> Consumption</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 16</td>
+                        <td>Nonfarm Payrolls</td>
+                        <td>Nov 2025</td>
+                        <td class="positive">+0.044pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 16</td>
+                        <td>Unemployment Rate</td>
+                        <td>Nov 2025</td>
+                        <td class="positive">+0.012pp</td>
+                        <td><span class="cat-dot" style="background:#2E86AB;"></span> Labor</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 18</td>
+                        <td>CPI All Items</td>
+                        <td>Oct 2025</td>
+                        <td class="negative">-0.074pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 18</td>
+                        <td>Core CPI</td>
+                        <td>Oct 2025</td>
+                        <td class="negative">-0.140pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 18</td>
+                        <td>CPI All Items</td>
+                        <td>Nov 2025</td>
+                        <td class="negative">-0.028pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 18</td>
+                        <td>Core CPI</td>
+                        <td>Nov 2025</td>
+                        <td class="negative">-0.077pp</td>
+                        <td><span class="cat-dot" style="background:#C73E1D;"></span> Prices</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 19</td>
+                        <td>U Mich Consumer Sentiment</td>
+                        <td>Dec 2025</td>
+                        <td class="positive">+0.005pp</td>
+                        <td><span class="cat-dot" style="background:#A23B72;"></span> Survey</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Real GDP</td>
+                        <td>Sep 2025</td>
+                        <td class="negative">-0.009pp</td>
+                        <td><span class="cat-dot" style="background:#333333;"></span> Output</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Industrial Production</td>
+                        <td>Oct 2025</td>
+                        <td class="positive">+0.002pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Capacity Utilization</td>
+                        <td>Oct 2025</td>
+                        <td class="positive">+0.003pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Durable Goods Orders</td>
+                        <td>Oct 2025</td>
+                        <td class="positive">+0.005pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Industrial Production</td>
+                        <td>Nov 2025</td>
+                        <td class="negative">-0.002pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 23</td>
+                        <td>Capacity Utilization</td>
+                        <td>Nov 2025</td>
+                        <td class="negative">-0.001pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
                     <tr>
                         <td>Jan 08</td>
                         <td>Exports</td>
@@ -1855,6 +2428,54 @@
                         <td>Dec 2025</td>
                         <td class="positive">+0.041pp</td>
                         <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 21</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="positive">+0.089pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Nov 28</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="positive">+0.040pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 05</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="negative">-0.038pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 12</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="positive">+0.590pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 19</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="positive">+0.164pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Dec 26</td>
+                        <td>Revisions &amp; re-estimation</td>
+                        <td></td>
+                        <td class="negative">-0.032pp</td>
+                        <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     </tr>
                     
                     <tr>
