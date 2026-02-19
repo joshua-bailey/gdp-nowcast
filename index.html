@@ -83,11 +83,6 @@
             color: #6C757D;
             margin-top: 4px;
         }
-        .cumulative-badge {
-            margin-top: 10px;
-            font-size: 13px;
-            font-weight: 600;
-        }
         .chart {
             max-width: 100%;
             height: auto;
@@ -610,12 +605,22 @@
             line-height: 1.5;
         }
 
+        /* Graduated quarter (revision tracking) styles */
+        .graduated-quarter { background: #f8f9fa; padding: 15px; border-radius: 6px; margin-bottom: 15px; }
+        .graduated-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+        .gdp-prints-status { display: flex; gap: 12px; flex-wrap: wrap; }
+        .gdp-print { display: inline-block; padding: 4px 10px; font-size: 13px; border-radius: 4px; background: white; }
+        .gdp-print.released { font-weight: 600; }
+        .gdp-print.pending { color: #6C757D; font-style: italic; border-left: 3px solid #dee2e6; }
+        .print-date { font-weight: normal; color: #999; font-size: 11px; }
+        .graduated-summary { color: #6C757D; font-size: 13px; margin-top: 8px; }
+
     </style>
 </head>
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: February 19, 2026 17:03 |
+        <p class="timestamp">Last updated: February 19, 2026 17:39 |
            Week: 2026-W08</p>
     </div>
 
@@ -633,11 +638,6 @@
                 <div class="data-bar" style="width: 87.03703703703704%"></div>
             </div>
             <div class="data-label">Data: 2.6/3.0 months avg</div>
-            
-                <div class="cumulative-badge" style="color: #DC3545;">
-                    Cumulative revision: -0.22pp
-                </div>
-                
         </div>
         
         <div class="nowcast-card">
@@ -652,11 +652,6 @@
                 <div class="data-bar" style="width: 14.814814814814813%"></div>
             </div>
             <div class="data-label">Data: 0.4/3.0 months avg</div>
-            
-                <div class="cumulative-badge" style="color: #DC3545;">
-                    Cumulative revision: -0.06pp
-                </div>
-                
         </div>
         
     </div>
@@ -1583,10 +1578,12 @@
             
 
     
+
+    
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-02-19 17:03)</span></p>
+            <span class="release-as-of">(as of 2026-02-19 17:39)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -3066,6 +3063,10 @@
             <details class="faq-entry">
                 <summary>What is the NY Fed comparison?</summary>
                 <p>The NY Fed Staff Nowcast uses a similar DFM methodology. Reference metrics are from their published evaluation covering 2006 Q2 &ndash; 2024 Q4. The comparison is approximate because the two models use different series selections and factor structures.</p>
+            </details>
+            <details class="faq-entry">
+                <summary>What is "Revision Tracking"?</summary>
+                <p>After the BEA advance GDP estimate is released, the model continues tracking the quarter through the second and third estimates (~30 and ~60 days later). The chart shows how the nowcast evolved before the advance, overlaid with the actual BEA prints as they arrive. The model's current estimate, informed by ongoing monthly data, may differ slightly from the latest BEA print &mdash; this gap can foreshadow the direction of the next revision.</p>
             </details>
     </div>
     
