@@ -620,7 +620,7 @@
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: March 13, 2026 14:15 |
+        <p class="timestamp">Last updated: March 13, 2026 17:45 |
            Week: 2026-W11</p>
     </div>
 
@@ -656,7 +656,7 @@
     <div id="nyfed-chart-next_release" style="width:100%;"></div>
     <script>
     (function() {
-        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0.8, 0.8, 0.7, 0.57, 0.57, 0.34, 0.09], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [4.5, 4.5, 4.39, 3.74, 3.74, 3.49, 3.22], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [1.44, 1.44, 1.34, 1.12, 1.12, 0.89, 0.64], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [3.85, 3.85, 3.74, 3.18, 3.18, 2.94, 2.68], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [2.65, 2.65, 2.54, 2.15, 2.15, 1.91, 1.66], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.02, 0, 0, -0.17, 0], "type": "bar", "name": "Labor", "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.1, 0, 0, 0], "type": "bar", "name": "Survey", "marker": {"color": "#A23B72"}, "hovertemplate": "Survey: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.46, 0, 0, 0.03], "type": "bar", "name": "Manufacturing", "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.03, 0.02, 0, -0.08, 0.05], "type": "bar", "name": "Consumption", "marker": {"color": "#28A745"}, "hovertemplate": "Consumption: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.09, 0, 0, -0.0], "type": "bar", "name": "Housing", "marker": {"color": "#6C757D"}, "hovertemplate": "Housing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.0, 0, 0, -0.29], "type": "bar", "name": "Trade", "marker": {"color": "#E36414"}, "hovertemplate": "Trade: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08], "type": "bar", "name": "Prices", "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, 0.05, 0, 0, 0], "type": "bar", "name": "Output", "marker": {"color": "#333333"}, "hovertemplate": "Output: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, 0.01, 0, 0, 0], "type": "bar", "name": "Re-estimation", "marker": {"color": "#8B8682"}, "hovertemplate": "Re-estimation: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0.0, 0.0, -0.11, -0.39, 0.0, -0.24, -0.25], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
+        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0.8, 0.8, 0.7, 0.57, 0.57, 0.34, 0.09], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [4.5, 4.5, 4.39, 3.74, 3.74, 3.49, 3.22], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [1.44, 1.44, 1.34, 1.12, 1.12, 0.89, 0.64], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [3.85, 3.85, 3.74, 3.18, 3.18, 2.94, 2.68], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [2.65, 2.65, 2.54, 2.15, 2.15, 1.91, 1.66], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.02, 0, 0, -0.16, 0], "type": "bar", "name": "Labor", "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.1, 0, 0, 0], "type": "bar", "name": "Survey", "marker": {"color": "#A23B72"}, "hovertemplate": "Survey: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.26, 0.0, 0, 0.03], "type": "bar", "name": "Manufacturing", "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.03, 0.03, 0, -0.08, 0.05], "type": "bar", "name": "Consumption", "marker": {"color": "#28A745"}, "hovertemplate": "Consumption: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.09, 0, 0, -0.0], "type": "bar", "name": "Housing", "marker": {"color": "#6C757D"}, "hovertemplate": "Housing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, -0.01, 0, 0, -0.29], "type": "bar", "name": "Trade", "marker": {"color": "#E36414"}, "hovertemplate": "Trade: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08], "type": "bar", "name": "Prices", "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, 0.05, 0, 0, 0.04], "type": "bar", "name": "Output", "marker": {"color": "#333333"}, "hovertemplate": "Output: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0, 0, 0, 0.01, 0, 0, 0], "type": "bar", "name": "Re-estimation", "marker": {"color": "#8B8682"}, "hovertemplate": "Re-estimation: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09"], "y": [0.0, 0.0, -0.11, -0.39, 0.0, -0.24, -0.25], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
         var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 500, "hovermode": "closest", "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.55, 1.0], "anchor": "x2", "range": [0.004199700306457166, 4.942716448317373], "hoverformat": ".2f"}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.48], "zeroline": true, "zerolinecolor": "#333", "anchor": "x", "hoverformat": ".2f"}};
         Plotly.newPlot('nyfed-chart-next_release', data, layout, {responsive: true});
         var chartEl = document.getElementById('nyfed-chart-next_release');
@@ -1052,7 +1052,7 @@
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-03-13 14:15)</span></p>
+            <span class="release-as-of">(as of 2026-03-13 17:45)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -1200,64 +1200,55 @@
                         <h5>Cumulative Impact by Series</h5>
                         <div class="series-impact-list">
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
-                        <span class="series-name">all prior revisions</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 25.42504773879632%; float: right"></div>
-                        </div>
-                        <span class="series-value positive">+0.25pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Industrial Production</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 22.824085976235526%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.23pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
                         <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
                         <span class="series-name">Exports</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 22.608306575005017%; float: left"></div>
+                            <div class="series-bar negative" style="width: 24.03020629364318%; float: left"></div>
                         </div>
-                        <span class="series-value negative">-0.23pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Capacity Utilization</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 22.593406906649456%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.23pp</span>
+                        <span class="series-value negative">-0.24pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#2E86AB;" title="Labor"></span>
                         <span class="series-name">Nonfarm Payrolls</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 17.8974723623666%; float: left"></div>
+                            <div class="series-bar negative" style="width: 17.550867910847355%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.18pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
+                        <span class="series-name">Industrial Production</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 12.839651597230633%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.13pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
                         <span class="series-name">Housing Starts</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 13.298755000882007%; float: left"></div>
+                            <div class="series-bar negative" style="width: 12.603406222177602%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.13pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
+                        <span class="series-name">Capacity Utilization</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 12.19614057416693%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.12pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
                         <span class="series-name">CPI All Items</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 11.569188753310291%; float: left"></div>
+                            <div class="series-bar negative" style="width: 11.700921103775041%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.12pp</span>
                     </div>
@@ -1266,7 +1257,7 @@
                         <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
                         <span class="series-name">Retail Sales</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 11.060238947768664%; float: left"></div>
+                            <div class="series-bar negative" style="width: 11.272335493767358%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.11pp</span>
                     </div>
@@ -1275,63 +1266,72 @@
                         <span class="cat-dot" style="background:#999999;" title="Other"></span>
                         <span class="series-name">Empire State Mfg Survey</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 10.270328508474314%; float: left"></div>
+                            <div class="series-bar negative" style="width: 10.27033126604118%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.10pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
-                        <span class="series-name">Imports</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 6.866570206128294%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.07pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
-                        <span class="series-name">Real Personal Consumption</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 6.492527274701455%; float: right"></div>
-                        </div>
-                        <span class="series-value positive">+0.06pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
-                        <span class="series-name">PCE Price Index</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 5.266714930264746%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.05pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#333333;" title="Output"></span>
                         <span class="series-name">Real GDP</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 4.709108611131875%; float: right"></div>
+                            <div class="series-bar positive" style="width: 8.607331528541714%; float: right"></div>
                         </div>
-                        <span class="series-value positive">+0.05pp</span>
+                        <span class="series-value positive">+0.09pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#28A745;" title="Consumption"></span>
+                        <span class="series-name">Real Personal Consumption</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar positive" style="width: 8.248222060557145%; float: right"></div>
+                        </div>
+                        <span class="series-value positive">+0.08pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#E36414;" title="Trade"></span>
+                        <span class="series-name">Imports</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 5.792809636873361%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.06pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
+                        <span class="series-name">PCE Price Index</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 5.299289016784555%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.05pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
                         <span class="series-name">Building Permits</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 3.8485176519688786%; float: right"></div>
+                            <div class="series-bar positive" style="width: 3.4711464672725776%; float: right"></div>
                         </div>
-                        <span class="series-value positive">+0.04pp</span>
+                        <span class="series-value positive">+0.03pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
                         <span class="series-name">Durable Goods Orders</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 2.661201019270792%; float: right"></div>
+                            <div class="series-bar positive" style="width: 2.11868992641061%; float: right"></div>
                         </div>
-                        <span class="series-value positive">+0.03pp</span>
+                        <span class="series-value positive">+0.02pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#C73E1D;" title="Prices"></span>
+                        <span class="series-name">Core PCE</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar positive" style="width: 1.3999737431746557%; float: right"></div>
+                        </div>
+                        <span class="series-value positive">+0.01pp</span>
                     </div>
                     </div>
                     </div>
