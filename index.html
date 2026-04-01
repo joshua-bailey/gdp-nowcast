@@ -478,6 +478,18 @@
             vertical-align: middle;
             flex-shrink: 0;
         }
+        .rev-parent { cursor: pointer; }
+        .rev-parent:hover { background: #f8f9fa; }
+        .rev-toggle {
+            display: inline-block;
+            width: 12px;
+            font-size: 10px;
+            transition: transform 0.15s ease;
+            color: #666;
+        }
+        .rev-toggle.expanded { transform: rotate(90deg); }
+        .rev-hidden { display: none; }
+        .rev-child td { background: #fafafa; font-size: 11px; color: #555; }
         .cat-key {
             display: flex;
             flex-wrap: wrap;
@@ -620,7 +632,7 @@
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: April 01, 2026 10:28 |
+        <p class="timestamp">Last updated: April 01, 2026 16:56 |
            Week: 2026-W14</p>
     </div>
 
@@ -656,7 +668,7 @@
     <div id="nyfed-chart-next_release" style="width:100%;"></div>
     <script>
     (function() {
-        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0.8, 0.8, 0.7, 0.57, 0.57, 0.34, 0.09, 0.97, 0.97, 0.97], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [4.5, 4.5, 4.39, 3.74, 3.74, 3.49, 3.23, 4.68, 4.68, 4.68], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [1.45, 1.45, 1.34, 1.12, 1.12, 0.89, 0.64, 1.62, 1.62, 1.62], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [3.86, 3.86, 3.75, 3.18, 3.18, 2.94, 2.68, 4.03, 4.03, 4.03], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [2.65, 2.65, 2.55, 2.15, 2.15, 1.91, 1.66, 2.82, 2.82, 2.82], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.02, 0, 0, -0.16, 0, 0, 0, 0], "type": "bar", "name": "Labor", "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.1, 0, 0, 0, -0.87, 0, 0], "type": "bar", "name": "Survey", "marker": {"color": "#A23B72"}, "hovertemplate": "Survey: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.26, 0.0, 0, 0.03, 1.78, 0, 0], "type": "bar", "name": "Manufacturing", "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.03, 0.03, 0, -0.08, 0.05, 0, 0, -0.0], "type": "bar", "name": "Consumption", "marker": {"color": "#28A745"}, "hovertemplate": "Consumption: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.09, 0, 0, -0.0, 0.26, 0, 0], "type": "bar", "name": "Housing", "marker": {"color": "#6C757D"}, "hovertemplate": "Housing: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.01, 0, 0, -0.28, 0, 0, 0], "type": "bar", "name": "Trade", "marker": {"color": "#E36414"}, "hovertemplate": "Trade: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08, 0, 0, 0], "type": "bar", "name": "Prices", "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0.05, 0, 0, 0.04, 0, 0, 0], "type": "bar", "name": "Output", "marker": {"color": "#333333"}, "hovertemplate": "Output: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0, -0.0, 0, -0.01, 0, 0, 0], "type": "bar", "name": "Re-estimation", "marker": {"color": "#8B8682"}, "hovertemplate": "Re-estimation: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0.0, 0.0, -0.1, -0.4, 0.0, -0.24, -0.25, 1.16, 0.0, 0.0], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
+        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0.8, 0.8, 0.7, 0.57, 0.57, 0.34, 0.09, 0.97, 0.97, 0.97], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [4.5, 4.5, 4.39, 3.74, 3.74, 3.49, 3.23, 4.68, 4.68, 4.68], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [1.45, 1.45, 1.34, 1.12, 1.12, 0.89, 0.64, 1.62, 1.62, 1.62], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [3.86, 3.86, 3.75, 3.18, 3.18, 2.94, 2.68, 4.03, 4.03, 4.03], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [2.65, 2.65, 2.55, 2.15, 2.15, 1.91, 1.66, 2.82, 2.82, 2.82], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.02, 0, 0, -0.17, 0, 0, 0, 0], "type": "bar", "name": "Labor", "legendgroup": "Labor", "showlegend": true, "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.1, 0, 0, 0, -0.87, 0, 0], "type": "bar", "name": "Survey", "legendgroup": "Survey", "showlegend": true, "marker": {"color": "#A23B72"}, "hovertemplate": "Survey (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.47, 0, 0, 0.03, 0.94, 0, 0], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": true, "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0.2, 0.0, 0, -0.01, 0.84, 0, 0], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": false, "marker": {"color": "#F18F01", "pattern": {"shape": "/", "bgcolor": "#F18F01", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Manufacturing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.03, 0.02, 0, -0.08, 0.04, 0, 0, -0.01], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": true, "marker": {"color": "#28A745"}, "hovertemplate": "Consumption (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.0, 0.01, 0, -0.0, 0.01, 0, 0, 0.0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": false, "marker": {"color": "#28A745", "pattern": {"shape": "/", "bgcolor": "#28A745", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Consumption (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.09, 0, 0, -0.0, 0, 0, 0], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": true, "marker": {"color": "#6C757D"}, "hovertemplate": "Housing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.0, 0, 0, 0.0, 0.26, 0, 0], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": false, "marker": {"color": "#6C757D", "pattern": {"shape": "/", "bgcolor": "#6C757D", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Housing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, -0.0, 0, 0, -0.28, 0, 0, 0], "type": "bar", "name": "Trade", "legendgroup": "Trade", "showlegend": true, "marker": {"color": "#E36414"}, "hovertemplate": "Trade (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08, 0, 0, 0], "type": "bar", "name": "Prices", "legendgroup": "Prices", "showlegend": true, "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0.05, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": true, "marker": {"color": "#333333"}, "hovertemplate": "Output (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0, 0, 0, 0.04, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": false, "marker": {"color": "#333333", "pattern": {"shape": "/", "bgcolor": "#333333", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Output (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0, 0, 0, 0, -0.0, 0, -0.01, 0, 0, 0], "type": "bar", "name": "Re-estimation (rev)", "legendgroup": "Re-estimation", "showlegend": true, "marker": {"color": "#8B8682", "pattern": {"shape": "/", "bgcolor": "#8B8682", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Re-estimation (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30"], "y": [0.0, 0.0, -0.1, -0.4, 0.0, -0.24, -0.25, 1.16, 0.0, 0.0], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
         var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 500, "hovermode": "closest", "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.55, 1.0], "anchor": "x2", "range": [0.0028544061272242627, 5.139532543033886], "hoverformat": ".2f"}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.48], "zeroline": true, "zerolinecolor": "#333", "anchor": "x", "hoverformat": ".2f"}};
         Plotly.newPlot('nyfed-chart-next_release', data, layout, {responsive: true});
         var chartEl = document.getElementById('nyfed-chart-next_release');
@@ -701,11 +713,47 @@
                     <td class="negative">-0.01pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-0-0')">
                     <td>Apr 01</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-0-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
                     <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Jan 2026</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Mar 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Jan 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Feb 2025</td>
+                    <td class="negative">-0.00pp</td>
                 </tr>
                 
             <tr class="week-heading" data-week-idx="2">
@@ -735,11 +783,103 @@
                     <td class="negative">-0.87pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-2-0')">
                     <td>Mar 20</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-2-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
                     <td class="positive">+1.10pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.29pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.28pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Jan 2026</td>
+                    <td class="positive">+0.26pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.07pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.06pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Jan 2026</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Jan 2026</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Jan 2026</td>
+                    <td class="positive">+0.02pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-2-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
                 </tr>
                 
             <tr class="week-heading" data-week-idx="3">
@@ -825,11 +965,243 @@
                     <td class="positive">+0.04pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-3-0')">
                     <td>Mar 13</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-3-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
                     <td class="positive">+0.04pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#333333;"></span> Real GDP</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.04pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#8B8682;"></span> Re-estimation</td>
+                    <td></td>
+                    <td class="negative">-0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Jul 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Aug 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Jul 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Jul 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-3-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
                 </tr>
                 
             <tr class="week-heading" data-week-idx="4">
@@ -859,10 +1231,60 @@
                     <td class="negative">-0.01pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-4-0')">
                     <td>Mar 06</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-4-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2026</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Feb 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Dec 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-4-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Jan 2025</td>
                     <td class="positive">+0.00pp</td>
                 </tr>
                 
@@ -872,11 +1294,33 @@
                 </td>
             </tr>
             
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-5-0')">
                     <td>Feb 27</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-5-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
                     <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-5-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-5-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-5-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#8B8682;"></span> Re-estimation</td>
+                    <td></td>
+                    <td class="negative">-0.00pp</td>
                 </tr>
                 
             <tr class="week-heading" data-week-idx="6">
@@ -997,11 +1441,313 @@
                     <td class="positive">+0.01pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-6-0')">
                     <td>Feb 20</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-6-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
                     <td class="positive">+0.21pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.05pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.01pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Real Personal Consumption</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> PCE Price Index</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Capacity Utilization</td>
+                    <td>Aug 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#F18F01;"></span> Industrial Production</td>
+                    <td>Aug 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Personal Income</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Apr 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core PCE</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Jul 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Jan 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Jun 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Mar 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Apr 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Jul 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Feb 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Mar 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Jan 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Jun 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Exports</td>
+                    <td>May 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>Feb 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-6-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#E36414;"></span> Imports</td>
+                    <td>May 2025</td>
+                    <td class="positive">+0.00pp</td>
                 </tr>
                 
             <tr class="week-heading" data-week-idx="7">
@@ -1045,10 +1791,1271 @@
                     <td class="negative">-0.00pp</td>
                 </tr>
                 
-                <tr>
+                <tr class="rev-parent" onclick="toggleRevDetails('rev-7-0')">
                     <td>Feb 13</td>
-                    <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
+                    <td><span class="rev-toggle" id="toggle-rev-7-0">&#9654;</span>
+                        <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Apr 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Dec 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Mar 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jul 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Apr 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jul 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Aug 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Mar 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Aug 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Feb 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Aug 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jun 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jul 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jun 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Aug 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>May 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Sep 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Mar 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Nov 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>May 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Feb 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jun 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Feb 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jul 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Apr 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jan 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Mar 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jan 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Jan 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Apr 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#28A745;"></span> Retail Sales</td>
+                    <td>Dec 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>May 2025</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Apr 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jun 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Aug 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Aug 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jul 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Sep 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Aug 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Mar 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Feb 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jan 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Dec 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>May 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jul 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Feb 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jun 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Dec 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>May 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Dec 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Feb 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Sep 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Apr 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Mar 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Apr 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jul 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Dec 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jun 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jul 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jan 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Apr 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Aug 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Aug 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Sep 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Aug 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Mar 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Mar 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>May 2025</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Feb 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>May 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>May 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2024</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Feb 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jan 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jul 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>May 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Apr 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jun 2024</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jun 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Feb 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Mar 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Dec 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jul 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jun 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jul 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Dec 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Oct 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Sep 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Aug 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Apr 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Mar 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>May 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Aug 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Aug 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Nov 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>May 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Feb 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jun 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jul 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Nov 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Dec 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Feb 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Dec 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Mar 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jan 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jan 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>May 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Oct 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Apr 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Apr 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Feb 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Apr 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jun 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Sep 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Mar 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Jul 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Sep 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Dec 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Sep 2022</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Oct 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>May 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jun 2023</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Sep 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jan 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Mar 2023</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Apr 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Nov 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jun 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Aug 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jul 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jun 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Feb 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Jan 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#2E86AB;"></span> Nonfarm Payrolls</td>
+                    <td>Feb 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>Aug 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Feb 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>May 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Apr 2021</td>
+                    <td class="negative">-0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Mar 2022</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> Core CPI</td>
+                    <td>Jan 2021</td>
+                    <td class="positive">+0.00pp</td>
+                </tr>
+                
+                <tr class="rev-child rev-hidden" data-parent="rev-7-0">
+                    <td></td>
+                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#C73E1D;"></span> CPI All Items</td>
+                    <td>May 2021</td>
                     <td class="negative">-0.00pp</td>
                 </tr>
                 </tbody>
@@ -1113,7 +3120,7 @@
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-04-01 10:28)</span></p>
+            <span class="release-as-of">(as of 2026-04-01 16:56)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -1955,5 +3962,18 @@
             </details>
     </div>
     
+
+<script>
+function toggleRevDetails(parentId) {
+    var toggle = document.getElementById('toggle-' + parentId);
+    var children = document.querySelectorAll('tr.rev-child[data-parent="' + parentId + '"]');
+    var isExpanded = toggle.classList.contains('expanded');
+    toggle.classList.toggle('expanded');
+    toggle.innerHTML = isExpanded ? '▶' : '▼';
+    for (var i = 0; i < children.length; i++) {
+        children[i].classList.toggle('rev-hidden');
+    }
+}
+</script>
 </body>
 </html>
