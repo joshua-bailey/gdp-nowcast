@@ -632,7 +632,7 @@
 <body>
     <div class="header">
         <h1>GDP Nowcast Dashboard</h1>
-        <p class="timestamp">Last updated: April 29, 2026 11:21 |
+        <p class="timestamp">Last updated: April 29, 2026 11:45 |
            Week: 2026-W18</p>
     </div>
 
@@ -682,7 +682,7 @@
     <div id="nyfed-chart-next_release" style="width:100%;"></div>
     <script>
     (function() {
-        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0.79, 0.79, 0.69, 0.57, 0.58, 0.34, 0.1, 0.97, 0.97, 1.38, 1.42, 1.02, 1.09, 1.05], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [4.5, 4.5, 4.38, 3.74, 3.74, 3.49, 3.23, 4.69, 4.69, 5.07, 5.11, 4.69, 4.77, 4.73], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [1.44, 1.44, 1.34, 1.13, 1.13, 0.89, 0.65, 1.62, 1.62, 2.02, 2.06, 1.66, 1.73, 1.69], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [3.85, 3.85, 3.74, 3.19, 3.19, 2.94, 2.69, 4.04, 4.04, 4.43, 4.46, 4.05, 4.12, 4.08], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [2.65, 2.65, 2.54, 2.16, 2.16, 1.92, 1.67, 2.83, 2.83, 3.22, 3.26, 2.85, 2.93, 2.89], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.02, 0, 0, -0.16, 0, 0, 0, 0.12, 0, 0, 0, 0], "type": "bar", "name": "Labor", "legendgroup": "Labor", "showlegend": true, "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.0, 0, 0, 0.0, 0, 0, 0, -0.01, 0, 0, 0, 0], "type": "bar", "name": "Labor", "legendgroup": "Labor", "showlegend": false, "marker": {"color": "#2E86AB", "pattern": {"shape": "/", "bgcolor": "#2E86AB", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Labor (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.08, 0, 0, 0, -0.96, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Survey", "legendgroup": "Survey", "showlegend": true, "marker": {"color": "#A23B72"}, "hovertemplate": "Survey (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.44, 0, 0, 0.03, 0.93, 0, 0, -0.05, -0.36, 0, 0], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": true, "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0.19, 0.0, 0, -0.0, 0.9, 0, 0, -0.01, -0.05, 0, 0.0], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": false, "marker": {"color": "#F18F01", "pattern": {"shape": "/", "bgcolor": "#F18F01", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Manufacturing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.03, 0.02, 0, -0.08, 0.04, 0, 0, -0.0, -0.05, 0, 0.06, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": true, "marker": {"color": "#28A745"}, "hovertemplate": "Consumption (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.0, 0.01, 0, -0.0, 0.0, 0, 0, 0.0, -0.02, 0, 0.01, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": false, "marker": {"color": "#28A745", "pattern": {"shape": "/", "bgcolor": "#28A745", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Consumption (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.08, 0, 0, -0.01, 0, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": true, "marker": {"color": "#6C757D"}, "hovertemplate": "Housing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.0, 0, 0, 0.0, 0.28, 0, 0, 0, 0, 0, -0.04], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": false, "marker": {"color": "#6C757D", "pattern": {"shape": "/", "bgcolor": "#6C757D", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Housing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.01, 0, 0, -0.27, 0, 0, 0.29, 0, 0, 0, 0], "type": "bar", "name": "Trade", "legendgroup": "Trade", "showlegend": true, "marker": {"color": "#E36414"}, "hovertemplate": "Trade (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08, 0, 0, 0, 0.16, 0, 0, 0], "type": "bar", "name": "Prices", "legendgroup": "Prices", "showlegend": true, "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0.04, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": true, "marker": {"color": "#333333"}, "hovertemplate": "Output (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0, 0, 0, 0.04, 0, 0, 0, -0.01, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": false, "marker": {"color": "#333333", "pattern": {"shape": "/", "bgcolor": "#333333", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Output (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0, -0.0, 0, -0.01, 0, 0, 0, 0.01, 0, 0, 0.0], "type": "bar", "name": "Re-estimation (rev)", "legendgroup": "Re-estimation", "showlegend": true, "marker": {"color": "#8B8682", "pattern": {"shape": "/", "bgcolor": "#8B8682", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Re-estimation (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0.0, 0.0, -0.11, -0.38, 0.0, -0.24, -0.25, 1.16, 0.0, 0.39, 0.04, -0.41, 0.08, -0.04], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
+        var data = [{"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0.79, 0.79, 0.69, 0.57, 0.58, 0.34, 0.1, 0.97, 0.97, 1.38, 1.42, 1.02, 1.09, 1.05], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [4.5, 4.5, 4.38, 3.74, 3.74, 3.49, 3.23, 4.69, 4.69, 5.07, 5.11, 4.69, 4.77, 4.73], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [1.44, 1.44, 1.34, 1.13, 1.13, 0.89, 0.65, 1.62, 1.62, 2.02, 2.06, 1.66, 1.73, 1.69], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [3.85, 3.85, 3.74, 3.19, 3.19, 2.94, 2.69, 4.04, 4.04, 4.43, 4.46, 4.05, 4.12, 4.08], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [2.65, 2.65, 2.54, 2.16, 2.16, 1.92, 1.67, 2.83, 2.83, 3.22, 3.26, 2.85, 2.93, 2.89], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.02, 0, 0, -0.16, 0, 0, 0, 0.12, 0, 0, 0, 0], "type": "bar", "name": "Labor", "legendgroup": "Labor", "showlegend": true, "marker": {"color": "#2E86AB"}, "hovertemplate": "Labor (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.0, 0, 0, 0.0, 0, 0, 0, -0.01, 0, 0, 0, 0], "type": "bar", "name": "Labor", "legendgroup": "Labor", "showlegend": false, "marker": {"color": "#2E86AB", "pattern": {"shape": "/", "bgcolor": "#2E86AB", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Labor (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.08, 0, 0, 0, -0.96, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Survey", "legendgroup": "Survey", "showlegend": true, "marker": {"color": "#A23B72"}, "hovertemplate": "Survey (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.44, 0, 0, 0.03, 0.93, 0, 0, -0.05, -0.36, 0, -0.01], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": true, "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0.19, 0.0, 0, -0.0, 0.9, 0, 0, -0.01, -0.05, 0, 0.0], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": false, "marker": {"color": "#F18F01", "pattern": {"shape": "/", "bgcolor": "#F18F01", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Manufacturing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.03, 0.02, 0, -0.08, 0.04, 0, 0, -0.0, -0.05, 0, 0.06, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": true, "marker": {"color": "#28A745"}, "hovertemplate": "Consumption (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.0, 0.01, 0, -0.0, 0.0, 0, 0, 0.0, -0.02, 0, 0.01, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": false, "marker": {"color": "#28A745", "pattern": {"shape": "/", "bgcolor": "#28A745", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Consumption (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.08, 0, 0, -0.01, 0, 0, 0, 0, 0, 0, 0.01], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": true, "marker": {"color": "#6C757D"}, "hovertemplate": "Housing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.0, 0, 0, 0.0, 0.28, 0, 0, 0, 0, 0, -0.04], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": false, "marker": {"color": "#6C757D", "pattern": {"shape": "/", "bgcolor": "#6C757D", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Housing (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, -0.01, 0, 0, -0.27, 0, 0, 0.29, 0, 0, 0, 0], "type": "bar", "name": "Trade", "legendgroup": "Trade", "showlegend": true, "marker": {"color": "#E36414"}, "hovertemplate": "Trade (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.06, -0.02, 0, 0, -0.08, 0, 0, 0, 0.16, 0, 0, 0], "type": "bar", "name": "Prices", "legendgroup": "Prices", "showlegend": true, "marker": {"color": "#C73E1D"}, "hovertemplate": "Prices (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0.04, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": true, "marker": {"color": "#333333"}, "hovertemplate": "Output (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0, 0, 0, 0.04, 0, 0, 0, -0.01, 0, 0, 0], "type": "bar", "name": "Output", "legendgroup": "Output", "showlegend": false, "marker": {"color": "#333333", "pattern": {"shape": "/", "bgcolor": "#333333", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Output (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, 0, 0, -0.0, 0, -0.01, 0, 0, 0, 0.01, 0, 0, 0], "type": "bar", "name": "Re-estimation (rev)", "legendgroup": "Re-estimation", "showlegend": true, "marker": {"color": "#8B8682", "pattern": {"shape": "/", "bgcolor": "#8B8682", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Re-estimation (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Jan 26", "Feb 02", "Feb 09", "Feb 16", "Feb 23", "Mar 02", "Mar 09", "Mar 16", "Mar 23", "Mar 30", "Apr 06", "Apr 13", "Apr 20", "Apr 27"], "y": [0.0, 0.0, -0.11, -0.38, 0.0, -0.24, -0.25, 1.16, 0.0, 0.39, 0.04, -0.41, 0.08, -0.04], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
         var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 500, "hovermode": "closest", "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.55, 1.0], "anchor": "x2", "range": [-0.00011793941251345141, 5.60901469716763], "hoverformat": ".2f"}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.48], "zeroline": true, "zerolinecolor": "#333", "anchor": "x", "hoverformat": ".2f"}};
         Plotly.newPlot('nyfed-chart-next_release', data, layout, {responsive: true});
         var chartEl = document.getElementById('nyfed-chart-next_release');
@@ -720,6 +720,41 @@
                 </td>
             </tr>
             
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Feb 2026</td>
+                    <td class="positive">+0.07pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Feb 2026</td>
+                    <td class="negative">-0.04pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Mar 2026</td>
+                    <td class="negative">-0.06pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Mar 2026</td>
+                    <td class="negative">-0.01pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Mar 2026</td>
+                    <td class="positive">+0.04pp</td>
+                </tr>
+                
                 <tr class="rev-parent" onclick="toggleRevDetails('rev-0-0')">
                     <td>Apr 29</td>
                     <td><span class="rev-toggle" id="toggle-rev-0-0">&#9654;</span>
@@ -740,13 +775,6 @@
                     <td style="padding-left:28px;"><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
                     <td>Dec 2025</td>
                     <td class="negative">-0.01pp</td>
-                </tr>
-                
-                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
-                    <td></td>
-                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#8B8682;"></span> Re-estimation</td>
-                    <td></td>
-                    <td class="positive">+0.00pp</td>
                 </tr>
                 
                 <tr class="rev-child rev-hidden" data-parent="rev-0-0">
@@ -3543,7 +3571,7 @@
     <div id="nyfed-chart-current_calendar" style="width:100%;"></div>
     <script>
     (function() {
-        var data = [{"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0.92, 1.05, 1.02], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [4.63, 4.76, 4.71], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [1.57, 1.7, 1.66], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [3.98, 4.11, 4.07], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [2.77, 2.91, 2.87], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0.13, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": true, "marker": {"color": "#28A745"}, "hovertemplate": "Consumption (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0.01, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": false, "marker": {"color": "#28A745", "pattern": {"shape": "/", "bgcolor": "#28A745", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Consumption (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.04], "type": "bar", "name": "Re-estimation (rev)", "legendgroup": "Re-estimation", "showlegend": true, "marker": {"color": "#8B8682", "pattern": {"shape": "/", "bgcolor": "#8B8682", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Re-estimation (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0.0, 0.14, -0.04], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
+        var data = [{"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0.92, 1.05, 1.02], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [4.63, 4.76, 4.71], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.12)", "name": "50/70% CI", "line": {"width": 0}, "showlegend": true, "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [1.57, 1.7, 1.66], "type": "scatter", "mode": "lines", "line": {"width": 0}, "showlegend": false, "hoverinfo": "skip", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [3.98, 4.11, 4.07], "type": "scatter", "mode": "lines", "fill": "tonexty", "fillcolor": "rgba(46,134,171,0.18)", "name": "50% CI", "line": {"width": 0}, "showlegend": false, "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [2.77, 2.91, 2.87], "type": "scatter", "mode": "lines+markers", "name": "Nowcast", "line": {"color": "#2E86AB", "width": 2.5}, "marker": {"color": "#2E86AB", "size": 8}, "hovertemplate": "%{x}<br>Nowcast: %{y:.2f}% SAAR<extra></extra>", "xaxis": "x2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.01], "type": "bar", "name": "Manufacturing", "legendgroup": "Manufacturing", "showlegend": true, "marker": {"color": "#F18F01"}, "hovertemplate": "Manufacturing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0.13, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": true, "marker": {"color": "#28A745"}, "hovertemplate": "Consumption (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0.01, 0], "type": "bar", "name": "Consumption", "legendgroup": "Consumption", "showlegend": false, "marker": {"color": "#28A745", "pattern": {"shape": "/", "bgcolor": "#28A745", "fgcolor": "rgba(255,255,255,0.55)", "size": 6, "solidity": 0.4}}, "hovertemplate": "Consumption (revisions): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0, 0, -0.02], "type": "bar", "name": "Housing", "legendgroup": "Housing", "showlegend": true, "marker": {"color": "#6C757D"}, "hovertemplate": "Housing (new data): %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}, {"x": ["Apr 13", "Apr 20", "Apr 27"], "y": [0.0, 0.14, -0.04], "type": "scatter", "mode": "markers", "name": "Net \u0394", "marker": {"symbol": "diamond", "color": "#333", "size": 10, "line": {"color": "white", "width": 1}}, "hovertemplate": "Net: %{y:+.2f}pp<extra></extra>", "yaxis": "y2"}];
         var layout = {"barmode": "relative", "showlegend": true, "legend": {"orientation": "h", "y": 1.12, "x": 0.5, "xanchor": "center"}, "margin": {"t": 30, "r": 20, "b": 80, "l": 60}, "height": 500, "hovermode": "closest", "xaxis": {"tickangle": -45, "anchor": "y2"}, "xaxis2": {"matches": "x", "showticklabels": false, "anchor": "y", "overlaying": "x"}, "yaxis": {"title": "Nowcast (% SAAR)", "side": "left", "domain": [0.55, 1.0], "anchor": "x2", "range": [0.8411081831539917, 5.139801161063232], "hoverformat": ".2f"}, "yaxis2": {"title": "Weekly \u0394 (pp)", "side": "left", "domain": [0.0, 0.48], "zeroline": true, "zerolinecolor": "#333", "anchor": "x", "hoverformat": ".2f"}};
         Plotly.newPlot('nyfed-chart-current_calendar', data, layout, {responsive: true});
         var chartEl = document.getElementById('nyfed-chart-current_calendar');
@@ -3581,19 +3609,47 @@
                 </td>
             </tr>
             
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Feb 2026</td>
+                    <td class="positive">+0.04pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Feb 2026</td>
+                    <td class="negative">-0.03pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Building Permits</td>
+                    <td>Mar 2026</td>
+                    <td class="negative">-0.12pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#F18F01;"></span> Durable Goods Orders</td>
+                    <td>Mar 2026</td>
+                    <td class="negative">-0.01pp</td>
+                </tr>
+                
+                <tr>
+                    <td>Apr 29</td>
+                    <td><span class="cat-dot" style="background:#6C757D;"></span> Housing Starts</td>
+                    <td>Mar 2026</td>
+                    <td class="positive">+0.07pp</td>
+                </tr>
+                
                 <tr class="rev-parent" onclick="toggleRevDetails('rev-0-0')">
                     <td>Apr 29</td>
                     <td><span class="rev-toggle" id="toggle-rev-0-0">&#9654;</span>
                         <span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     <td></td>
-                    <td class="negative">-0.04pp</td>
-                </tr>
-                
-                <tr class="rev-child rev-hidden" data-parent="rev-0-0">
-                    <td></td>
-                    <td style="padding-left:28px;"><span class="cat-dot" style="background:#8B8682;"></span> Re-estimation</td>
-                    <td></td>
-                    <td class="negative">-0.04pp</td>
+                    <td class="negative">-0.00pp</td>
                 </tr>
                 
                 <tr class="rev-child rev-hidden" data-parent="rev-0-0">
@@ -3715,7 +3771,7 @@
     <div class="card">
         <h3>Data Release Calendar</h3>
         <p class="section-desc">Upcoming and recent FRED data releases for model series
-            <span class="release-as-of">(as of 2026-04-29 11:21)</span></p>
+            <span class="release-as-of">(as of 2026-04-29 11:45)</span></p>
         
         <div class="release-subsection">
             <h4>Upcoming</h4>
@@ -3879,7 +3935,7 @@
                         <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
                         <span class="series-name">Building Permits</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 31.561299254872953%; float: right"></div>
+                            <div class="series-bar positive" style="width: 32.26328896868141%; float: right"></div>
                         </div>
                         <span class="series-value positive">+0.32pp</span>
                     </div>
@@ -3888,7 +3944,7 @@
                         <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
                         <span class="series-name">Housing Starts</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 16.312562822668227%; float: left"></div>
+                            <div class="series-bar negative" style="width: 15.822270860996662%; float: left"></div>
                         </div>
                         <span class="series-value negative">-0.16pp</span>
                     </div>
@@ -3957,21 +4013,21 @@
                     </div>
                     
                     <div class="series-impact-item">
+                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
+                        <span class="series-name">Durable Goods Orders</span>
+                        <div class="series-bar-container">
+                            <div class="series-bar negative" style="width: 1.7065268202961104%; float: left"></div>
+                        </div>
+                        <span class="series-value negative">-0.02pp</span>
+                    </div>
+                    
+                    <div class="series-impact-item">
                         <span class="cat-dot" style="background:#999999;" title="Other"></span>
                         <span class="series-name">U Mich Consumer Sentiment</span>
                         <div class="series-bar-container">
                             <div class="series-bar positive" style="width: 0.9589033736595559%; float: right"></div>
                         </div>
                         <span class="series-value positive">+0.01pp</span>
-                    </div>
-                    
-                    <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
-                        <span class="series-name">Durable Goods Orders</span>
-                        <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 0.8960935552219418%; float: left"></div>
-                        </div>
-                        <span class="series-value negative">-0.01pp</span>
                     </div>
                     
                     <div class="series-impact-item">
@@ -3986,7 +4042,7 @@
                     </div>
 
                     <details class="impact-details">
-                        <summary>View All Data Releases (64 observations)</summary>
+                        <summary>View All Data Releases (69 observations)</summary>
                         <table class="impact-table">
                             <thead>
                                 <tr>
@@ -4423,6 +4479,46 @@
                     </tr>
                     
                     <tr>
+                        <td>Apr 29</td>
+                        <td>Building Permits</td>
+                        <td>Feb 2026</td>
+                        <td class="positive">+0.07pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Housing Starts</td>
+                        <td>Feb 2026</td>
+                        <td class="negative">-0.04pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Building Permits</td>
+                        <td>Mar 2026</td>
+                        <td class="negative">-0.06pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Durable Goods Orders</td>
+                        <td>Mar 2026</td>
+                        <td class="negative">-0.01pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Housing Starts</td>
+                        <td>Mar 2026</td>
+                        <td class="positive">+0.04pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
                         <td>Feb 13</td>
                         <td>Revisions &amp; re-estimation</td>
                         <td></td>
@@ -4531,36 +4627,36 @@
                     </div>
                     
                     <div class="series-impact-item">
-                        <span class="cat-dot" style="background:#999999;" title="Other"></span>
-                        <span class="series-name">Re-estimation</span>
+                        <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
+                        <span class="series-name">Building Permits</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 3.853814106386138%; float: left"></div>
+                            <div class="series-bar negative" style="width: 7.228602691721206%; float: left"></div>
                         </div>
-                        <span class="series-value negative">-0.04pp</span>
+                        <span class="series-value negative">-0.07pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#6C757D;" title="Housing"></span>
                         <span class="series-name">Housing Starts</span>
                         <div class="series-bar-container">
-                            <div class="series-bar negative" style="width: 0.22544023523628862%; float: left"></div>
+                            <div class="series-bar positive" style="width: 4.579349956044737%; float: right"></div>
                         </div>
-                        <span class="series-value negative">-0.00pp</span>
+                        <span class="series-value positive">+0.05pp</span>
                     </div>
                     
                     <div class="series-impact-item">
                         <span class="cat-dot" style="background:#F18F01;" title="Manufacturing"></span>
                         <span class="series-name">Durable Goods Orders</span>
                         <div class="series-bar-container">
-                            <div class="series-bar positive" style="width: 0.057342528317291946%; float: right"></div>
+                            <div class="series-bar negative" style="width: 1.3726590776286645%; float: left"></div>
                         </div>
-                        <span class="series-value positive">+0.00pp</span>
+                        <span class="series-value negative">-0.01pp</span>
                     </div>
                     </div>
                     </div>
 
                     <details class="impact-details">
-                        <summary>View All Data Releases (3 observations)</summary>
+                        <summary>View All Data Releases (8 observations)</summary>
                         <table class="impact-table">
                             <thead>
                                 <tr>
@@ -4581,6 +4677,46 @@
                     </tr>
                     
                     <tr>
+                        <td>Apr 29</td>
+                        <td>Building Permits</td>
+                        <td>Feb 2026</td>
+                        <td class="positive">+0.04pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Housing Starts</td>
+                        <td>Feb 2026</td>
+                        <td class="negative">-0.03pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Building Permits</td>
+                        <td>Mar 2026</td>
+                        <td class="negative">-0.12pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Durable Goods Orders</td>
+                        <td>Mar 2026</td>
+                        <td class="negative">-0.01pp</td>
+                        <td><span class="cat-dot" style="background:#F18F01;"></span> Manufacturing</td>
+                    </tr>
+                    
+                    <tr>
+                        <td>Apr 29</td>
+                        <td>Housing Starts</td>
+                        <td>Mar 2026</td>
+                        <td class="positive">+0.07pp</td>
+                        <td><span class="cat-dot" style="background:#6C757D;"></span> Housing</td>
+                    </tr>
+                    
+                    <tr>
                         <td>Apr 24</td>
                         <td>Revisions &amp; re-estimation</td>
                         <td></td>
@@ -4592,7 +4728,7 @@
                         <td>Apr 29</td>
                         <td>Revisions &amp; re-estimation</td>
                         <td></td>
-                        <td class="negative">-0.04pp</td>
+                        <td class="negative">-0.00pp</td>
                         <td><span class="cat-dot" style="background:#8B8682;"></span> Revisions &amp; re-estimation</td>
                     </tr>
                     </tbody>
