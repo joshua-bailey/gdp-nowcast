@@ -813,12 +813,19 @@
         }
         .beta-about summary:hover { text-decoration: underline; }
         .beta-about p { margin: 8px 0 0 0; color: var(--ink-soft); line-height: 1.5; }
-        .page-nav { margin: 0 0 18px 0; }
+        .page-nav { margin: 22px 0; }
         .page-nav a {
-            color: var(--navy); text-decoration: none; font-weight: 600; font-size: 12px;
-            font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em;
+            display: inline-flex; align-items: center; gap: 9px;
+            padding: 10px 16px;
+            border: 1px solid var(--navy);
+            background: var(--surface);
+            color: var(--navy);
+            text-decoration: none;
+            font-family: var(--mono); font-size: 12px; font-weight: 600;
+            text-transform: uppercase; letter-spacing: 0.06em;
+            transition: background 0.12s ease, color 0.12s ease;
         }
-        .page-nav a:hover { text-decoration: underline; }
+        .page-nav a:hover { background: var(--navy); color: #fff; }
         .beta-decomp { margin-top: 24px; border-top: 1px solid var(--rule); padding-top: 16px; }
         .beta-decomp h4 { margin: 0 0 4px 0; font-size: 14px; color: var(--ink); }
         .pd-explainer { margin-bottom: 20px; }
@@ -885,7 +892,7 @@
 <body>
     <div class="header">
         <h1>US GDP Nowcast &middot; Model Details</h1>
-        <p class="timestamp">Updated Jun 25, 2026 20:37</p>
+        <p class="timestamp">Updated Jun 26, 2026 10:15</p>
     </div>
 
     <div class="page-nav"><a href="dashboard.html">&larr; Back to the nowcast</a></div>
