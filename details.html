@@ -844,6 +844,8 @@
             font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.05em;
         }
         .pd-toggle-bar { margin: 4px 0 12px; }
+        .pd-toggle-label { font-family: var(--mono); font-size: 11px; color: var(--muted);
+            text-transform: uppercase; letter-spacing: 0.04em; margin-right: 8px; }
         .pd-toggle { font: inherit; font-family: var(--mono); font-size: 11px; padding: 5px 12px; margin-right: 6px; cursor: pointer;
             border: 1px solid var(--rule-strong); background: var(--surface); color: var(--ink-soft);
             text-transform: uppercase; letter-spacing: 0.04em; }
@@ -897,7 +899,7 @@
 <body>
     <div class="header">
         <h1>US GDP Nowcast &middot; Model Details</h1>
-        <p class="timestamp">Updated Jun 29, 2026 17:31</p>
+        <p class="timestamp">Updated Jun 29, 2026 17:47</p>
     </div>
 
     <div class="page-nav"><a href="dashboard.html">&larr; Back to the nowcast</a></div>
@@ -1008,58 +1010,23 @@
             <tr><td>Question</td><td>how good is the production DFM?</td><td>does a diversified ensemble beat any one model?</td></tr>
           </tbody>
         </table>
-        <h4>Final-horizon standings (pp SAAR — RMSE &amp; MAE lower is better, bias nearer 0 is better)</h4>
-        <div class="pd-toggle-bar">
-          <button id="pd-btn-advance" class="pd-toggle active" onclick="pdShowScore('advance')">vs advance print</button>
-          <button id="pd-btn-final" class="pd-toggle" onclick="pdShowScore('final')">vs final (third est.)</button>
-        </div>
-        <div id="pd-score-advance">
-          <div class="backtest-grid">
-            <div>
-              <h5 class="pd-regime">Post-GFC &middot; 37 quarters (2010Q4&ndash;2019Q4, fixed)</h5>
-              <table class="comparison-table">
-                <thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead>
-                <tbody><tr class="pd-ens"><td>1</td><td>&#129351; Ensemble</td><td>0.94</td><td>0.72</td><td>+0.10</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.00</td><td>0.79</td><td>-0.01</td></tr><tr class="hr-prod"><td>3</td><td>DFM</td><td>1.02</td><td>0.79</td><td>-0.01</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.09</td><td>0.91</td><td>+0.39</td></tr><tr><td>5</td><td>Chronos-2</td><td>1.23</td><td>1.01</td><td>+0.02</td></tr></tbody>
-              </table>
-            </div>
-            <div>
-              <h5 class="pd-regime">Post-COVID &middot; 21 quarters (2021Q1&ndash;2026Q1, extends)</h5>
-              <table class="comparison-table">
-                <thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead>
-                <tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.15</td><td>0.80</td><td>+0.16</td></tr><tr class="pd-ens"><td>2</td><td>Ensemble</td><td>1.89</td><td>1.47</td><td>+0.06</td></tr><tr><td>3</td><td>Tuned Bayesian DFM</td><td>2.05</td><td>1.55</td><td>+0.05</td></tr><tr><td>4</td><td>LASSO bridge</td><td>2.25</td><td>1.80</td><td>-0.26</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.28</td><td>1.70</td><td>+0.49</td></tr><tr class="hr-prod"><td>6</td><td>DFM</td><td>2.36</td><td>1.88</td><td>-0.05</td></tr></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-        <div id="pd-score-final" class="hidden">
-          <div class="backtest-grid">
-            <div>
-              <h5 class="pd-regime">Post-GFC &middot; 37 quarters (vs third estimate)</h5>
-              <table class="comparison-table">
-                <thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead>
-                <tbody><tr class="hr-prod"><td>1</td><td>&#129351; DFM</td><td>1.67</td><td>1.25</td><td>-0.27</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.71</td><td>1.37</td><td>-0.29</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.74</td><td>1.38</td><td>-0.17</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.86</td><td>1.41</td><td>+0.12</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.04</td><td>1.66</td><td>-0.23</td></tr></tbody>
-              </table>
-            </div>
-            <div>
-              <h5 class="pd-regime">Post-COVID &middot; 20 quarters (through 2026Q1, vs third estimate)</h5>
-              <table class="comparison-table">
-                <thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead>
-                <tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.59</td><td>1.24</td><td>-0.08</td></tr><tr class="pd-ens"><td>2</td><td>Ensemble</td><td>1.86</td><td>1.59</td><td>-0.09</td></tr><tr><td>3</td><td>Chronos-2</td><td>2.12</td><td>1.73</td><td>+0.37</td></tr><tr><td>4</td><td>Tuned Bayesian DFM</td><td>2.17</td><td>1.72</td><td>-0.15</td></tr><tr class="hr-prod"><td>5</td><td>DFM</td><td>2.27</td><td>1.91</td><td>-0.19</td></tr><tr><td>6</td><td>LASSO bridge</td><td>2.33</td><td>1.86</td><td>-0.40</td></tr></tbody>
-              </table>
-            </div>
-          </div>
-        </div>
+        <h4>Standings by horizon (pp SAAR &mdash; RMSE &amp; MAE lower is better, bias nearer 0 is better)</h4>
+        <div class="pd-toggle-bar"><span class="pd-toggle-label">Horizon</span><button id="pdH-2_months_out" class="pd-toggle" onclick="pdSel('h','2_months_out')">8 weeks out</button><button id="pdH-1_month_out" class="pd-toggle" onclick="pdSel('h','1_month_out')">4 weeks out</button><button id="pdH-final" class="pd-toggle active" onclick="pdSel('h','final')">Day before (final)</button></div>
+        <div class="pd-toggle-bar"><span class="pd-toggle-label">Score vs</span><button id="pdT-advance" class="pd-toggle active" onclick="pdSel('t','advance')">vs advance print</button><button id="pdT-third" class="pd-toggle" onclick="pdSel('t','third')">vs final (third est.)</button></div>
+        <div id="pdP-2_months_out-advance" class="pd-board hidden"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 35 quarters (2010Q4&ndash;2019Q4, fixed)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="pd-ens"><td>1</td><td>&#129351; Ensemble</td><td>0.94</td><td>0.77</td><td>+0.07</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>0.97</td><td>0.81</td><td>-0.08</td></tr><tr class="hr-prod"><td>3</td><td>DFM</td><td>1.03</td><td>0.85</td><td>+0.03</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.20</td><td>0.96</td><td>+0.30</td></tr><tr><td>5</td><td>Chronos-2</td><td>1.21</td><td>0.96</td><td>+0.02</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 19 quarters (2021Q1&ndash;2026Q1, extends)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.64</td><td>1.48</td><td>+0.66</td></tr><tr><td>2</td><td>Chronos-2</td><td>1.69</td><td>1.43</td><td>-0.05</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.85</td><td>1.56</td><td>-0.23</td></tr><tr><td>4</td><td>Tuned Bayesian DFM</td><td>1.91</td><td>1.41</td><td>-0.31</td></tr><tr><td>5</td><td>LASSO bridge</td><td>2.02</td><td>1.85</td><td>-0.68</td></tr><tr class="hr-prod"><td>6</td><td>DFM</td><td>2.43</td><td>1.77</td><td>+0.11</td></tr></tbody></table></div></div></div><div id="pdP-2_months_out-third" class="pd-board hidden"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 37 quarters (vs third estimate)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-prod"><td>1</td><td>&#129351; DFM</td><td>1.59</td><td>1.26</td><td>-0.25</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.61</td><td>1.30</td><td>-0.36</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.65</td><td>1.28</td><td>-0.21</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.85</td><td>1.39</td><td>+0.03</td></tr><tr><td>5</td><td>Chronos-2</td><td>1.92</td><td>1.53</td><td>-0.27</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 18 quarters (through 2026Q1, vs third)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.54</td><td>1.29</td><td>+0.42</td></tr><tr><td>2</td><td>Chronos-2</td><td>1.55</td><td>1.26</td><td>-0.29</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.75</td><td>1.46</td><td>-0.48</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.95</td><td>1.73</td><td>-0.95</td></tr><tr><td>5</td><td>Tuned Bayesian DFM</td><td>2.00</td><td>1.64</td><td>-0.58</td></tr><tr class="hr-prod"><td>6</td><td>DFM</td><td>2.26</td><td>1.73</td><td>-0.10</td></tr></tbody></table></div></div></div><div id="pdP-1_month_out-advance" class="pd-board hidden"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 35 quarters (2010Q4&ndash;2019Q4, fixed)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-prod"><td>1</td><td>&#129351; DFM</td><td>1.00</td><td>0.79</td><td>-0.03</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.00</td><td>0.81</td><td>-0.01</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.04</td><td>0.81</td><td>+0.10</td></tr><tr><td>4</td><td>Chronos-2</td><td>1.29</td><td>1.04</td><td>+0.07</td></tr><tr><td>5</td><td>LASSO bridge</td><td>1.39</td><td>1.11</td><td>+0.37</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 20 quarters (2021Q1&ndash;2026Q1, extends)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.15</td><td>0.81</td><td>+0.06</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.98</td><td>1.54</td><td>-0.12</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>2.13</td><td>1.76</td><td>-0.20</td></tr><tr><td>4</td><td>LASSO bridge</td><td>2.34</td><td>1.97</td><td>-0.71</td></tr><tr class="hr-prod"><td>5</td><td>DFM</td><td>2.39</td><td>1.88</td><td>-0.07</td></tr><tr><td>6</td><td>Chronos-2</td><td>2.40</td><td>1.87</td><td>+0.09</td></tr></tbody></table></div></div></div><div id="pdP-1_month_out-third" class="pd-board hidden"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 37 quarters (vs third estimate)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-prod"><td>1</td><td>&#129351; DFM</td><td>1.60</td><td>1.18</td><td>-0.29</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.63</td><td>1.29</td><td>-0.30</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.72</td><td>1.35</td><td>-0.16</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.92</td><td>1.54</td><td>+0.12</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.05</td><td>1.65</td><td>-0.19</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 19 quarters (through 2026Q1, vs third)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.49</td><td>1.25</td><td>-0.19</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>2.04</td><td>1.69</td><td>-0.34</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>2.09</td><td>1.80</td><td>-0.37</td></tr><tr class="hr-prod"><td>4</td><td>DFM</td><td>2.25</td><td>1.85</td><td>-0.21</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.32</td><td>1.88</td><td>-0.05</td></tr><tr><td>6</td><td>LASSO bridge</td><td>2.37</td><td>2.00</td><td>-0.87</td></tr></tbody></table></div></div></div><div id="pdP-final-advance" class="pd-board"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 35 quarters (2010Q4&ndash;2019Q4, fixed)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="pd-ens"><td>1</td><td>&#129351; Ensemble</td><td>0.94</td><td>0.72</td><td>+0.10</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.00</td><td>0.79</td><td>-0.01</td></tr><tr class="hr-prod"><td>3</td><td>DFM</td><td>1.02</td><td>0.79</td><td>-0.01</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.09</td><td>0.91</td><td>+0.39</td></tr><tr><td>5</td><td>Chronos-2</td><td>1.23</td><td>1.01</td><td>+0.02</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 21 quarters (2021Q1&ndash;2026Q1, extends)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.15</td><td>0.80</td><td>+0.16</td></tr><tr class="pd-ens"><td>2</td><td>Ensemble</td><td>1.89</td><td>1.47</td><td>+0.06</td></tr><tr><td>3</td><td>Tuned Bayesian DFM</td><td>2.05</td><td>1.55</td><td>+0.05</td></tr><tr><td>4</td><td>LASSO bridge</td><td>2.25</td><td>1.80</td><td>-0.26</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.28</td><td>1.70</td><td>+0.49</td></tr><tr class="hr-prod"><td>6</td><td>DFM</td><td>2.36</td><td>1.88</td><td>-0.05</td></tr></tbody></table></div></div></div><div id="pdP-final-third" class="pd-board hidden"><div class="backtest-grid"><div><h5 class="pd-regime">Post-GFC &middot; 37 quarters (vs third estimate)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-prod"><td>1</td><td>&#129351; DFM</td><td>1.67</td><td>1.25</td><td>-0.27</td></tr><tr><td>2</td><td>Tuned Bayesian DFM</td><td>1.71</td><td>1.37</td><td>-0.29</td></tr><tr class="pd-ens"><td>3</td><td>Ensemble</td><td>1.74</td><td>1.38</td><td>-0.17</td></tr><tr><td>4</td><td>LASSO bridge</td><td>1.86</td><td>1.41</td><td>+0.12</td></tr><tr><td>5</td><td>Chronos-2</td><td>2.04</td><td>1.66</td><td>-0.23</td></tr></tbody></table></div><div><h5 class="pd-regime">Post-COVID &middot; 20 quarters (through 2026Q1, vs third)</h5><table class="comparison-table"><thead><tr><th>Rank</th><th>Model</th><th>RMSE</th><th>MAE</th><th>Bias</th></tr></thead><tbody><tr class="hr-ext"><td>1</td><td>&#129351; Atlanta Fed GDPNow</td><td>1.59</td><td>1.24</td><td>-0.08</td></tr><tr class="pd-ens"><td>2</td><td>Ensemble</td><td>1.86</td><td>1.59</td><td>-0.09</td></tr><tr><td>3</td><td>Chronos-2</td><td>2.12</td><td>1.73</td><td>+0.37</td></tr><tr><td>4</td><td>Tuned Bayesian DFM</td><td>2.17</td><td>1.72</td><td>-0.15</td></tr><tr class="hr-prod"><td>5</td><td>DFM</td><td>2.27</td><td>1.91</td><td>-0.19</td></tr><tr><td>6</td><td>LASSO bridge</td><td>2.33</td><td>1.86</td><td>-0.40</td></tr></tbody></table></div></div></div>
         <p class="comparison-footnote">Lowest-RMSE model: <strong>Ensemble</strong> post-GFC, <strong>Atlanta Fed GDPNow</strong> post-COVID. The ensemble's edge over the production DFM is directional post-GFC (Diebold-Mariano p=0.14) and directional post-COVID (p=0.11, n=21). The post-COVID board also scores the <strong>Atlanta Fed GDPNow</strong>
         as an external benchmark, on the <em>same</em> origins as our models from its real-time ALFRED vintages; because
         GDPNow freezes at each advance release, its value is its genuine pre-release nowcast (leakage-free). It has no
         usable real-time history before the post-COVID window, so it is not on the post-GFC board.</p>
         <p class="comparison-footnote">
-        Use the toggle to re-score the <em>same</em> nowcasts against the final (third) GDP estimate instead of the
-        advance print: this separates genuine nowcast error from advance-print noise. The advance&rarr;third revision is
-        itself ~0.76pp RMS over the 20 scored post-COVID quarters, so the gap between the two views is
-        essentially the irreducible noise in the advance number, not model error. (Quarters whose third estimate is not
-        yet published are excluded from the 'vs final' view, so its post-COVID sample is smaller, through 2026Q1.)
-        Post-GFC is a fixed pre-COVID window; post-COVID extends as the Live Horserace scores each graduated quarter.</p>
+        Two toggles. <strong>Horizon</strong> shows the board 8 weeks out, 4 weeks out, or the day before the release;
+        each horizon is scored on <em>common support</em> (every model on the same quarters), so the post-COVID sample
+        shrinks to 19 (8wk) / 20 (4wk) quarters where GDPNow lacks the earliest origins. <strong>Score vs</strong>
+        re-scores the <em>same</em> nowcasts against the final (third) GDP estimate instead of the advance print, which
+        separates genuine nowcast error from advance-print noise (the advance&rarr;third revision is itself
+        ~0.76pp RMS over the 20 scored post-COVID quarters; quarters without a third estimate yet are
+        dropped from that view, through 2026Q1). Post-GFC is a fixed pre-COVID window; post-COVID extends as the
+        Live Horserace scores each graduated quarter.</p>
         <div class="backtest-grid">
           <div><div id="pd-errcorr-15" class="altair-chart"></div>
 <script>vegaEmbed("#pd-errcorr-15", {"config": {"background": "transparent", "font": "IBM Plex Sans", "view": {"stroke": null, "fill": null}, "axis": {"labelFont": "IBM Plex Mono", "titleFont": "IBM Plex Sans", "labelColor": "#8a8d93", "titleColor": "#44474d", "labelFontSize": 12, "titleFontSize": 13, "labelFontWeight": 400, "titleFontWeight": 500, "gridColor": "#efeae2", "domainColor": "#c7c6bf", "tickColor": "#c7c6bf"}, "legend": {"labelFont": "IBM Plex Mono", "titleFont": "IBM Plex Sans", "labelFontSize": 12, "titleFontSize": 12, "labelColor": "#16181c", "titleColor": "#8a8d93"}, "title": {"font": "IBM Plex Sans", "fontSize": 14, "fontWeight": 600, "color": "#16181c", "anchor": "start", "subtitleColor": "#8a8d93"}, "range": {"category": ["#003366", "#E3120B", "#5A6E91", "#4A7C59", "#C9A66B", "#B5764A", "#8a8d93", "#6B9AC4"]}}, "layer": [{"mark": {"type": "rect"}, "encoding": {"color": {"field": "corr", "legend": {"title": "corr"}, "scale": {"domain": [-1, 1], "scheme": "blueorange"}, "type": "quantitative"}, "x": {"axis": {"labelAngle": -30}, "field": "x", "title": null, "type": "nominal"}, "y": {"field": "y", "title": null, "type": "nominal"}}}, {"mark": {"type": "text", "fontSize": 10}, "encoding": {"text": {"field": "corr", "format": ".2f", "type": "quantitative"}, "x": {"field": "x", "type": "nominal"}, "y": {"field": "y", "type": "nominal"}}}], "data": {"name": "data-543571152cc6c32dfc4e580b95c9d4fb"}, "height": 240, "title": {"text": "Post-COVID error correlations \u2014 low/negative \u21d2 diversification gains", "anchor": "start", "fontSize": 11}, "width": "container", "$schema": "https://vega.github.io/schema/vega-lite/v6.4.1.json", "datasets": {"data-543571152cc6c32dfc4e580b95c9d4fb": [{"x": "DFM", "y": "DFM", "corr": 1.0}, {"x": "DFM", "y": "Tuned Bayesian DFM", "corr": 0.84}, {"x": "DFM", "y": "LASSO bridge", "corr": 0.68}, {"x": "DFM", "y": "Chronos-2", "corr": 0.5}, {"x": "Tuned Bayesian DFM", "y": "DFM", "corr": 0.84}, {"x": "Tuned Bayesian DFM", "y": "Tuned Bayesian DFM", "corr": 1.0}, {"x": "Tuned Bayesian DFM", "y": "LASSO bridge", "corr": 0.66}, {"x": "Tuned Bayesian DFM", "y": "Chronos-2", "corr": 0.44}, {"x": "LASSO bridge", "y": "DFM", "corr": 0.68}, {"x": "LASSO bridge", "y": "Tuned Bayesian DFM", "corr": 0.66}, {"x": "LASSO bridge", "y": "LASSO bridge", "corr": 1.0}, {"x": "LASSO bridge", "y": "Chronos-2", "corr": 0.67}, {"x": "Chronos-2", "y": "DFM", "corr": 0.5}, {"x": "Chronos-2", "y": "Tuned Bayesian DFM", "corr": 0.44}, {"x": "Chronos-2", "y": "LASSO bridge", "corr": 0.67}, {"x": "Chronos-2", "y": "Chronos-2", "corr": 1.0}]}}, {"renderer": "svg", "actions": false}).then(function(r){(window.__vegaViews=window.__vegaViews||{})["pd-errcorr-15"]=r.view;}).catch(console.error);</script>
@@ -1071,11 +1038,19 @@
         </div>
     </div>
     <script>
-    function pdShowScore(m){
-        document.getElementById('pd-score-advance').classList.toggle('hidden', m !== 'advance');
-        document.getElementById('pd-score-final').classList.toggle('hidden', m !== 'final');
-        document.getElementById('pd-btn-advance').classList.toggle('active', m === 'advance');
-        document.getElementById('pd-btn-final').classList.toggle('active', m === 'final');
+    var pdH='final', pdT='advance';
+    function pdSel(dim,val){
+        if(dim==='h'){pdH=val;} else {pdT=val;}
+        ['2_months_out','1_month_out','final'].forEach(function(h){
+            var b=document.getElementById('pdH-'+h); if(b){b.classList.toggle('active', h===pdH);}
+            ['advance','third'].forEach(function(t){
+                var p=document.getElementById('pdP-'+h+'-'+t);
+                if(p){p.classList.toggle('hidden', !(h===pdH && t===pdT));}
+            });
+        });
+        ['advance','third'].forEach(function(t){
+            var b=document.getElementById('pdT-'+t); if(b){b.classList.toggle('active', t===pdT);}
+        });
     }
     </script>
     
