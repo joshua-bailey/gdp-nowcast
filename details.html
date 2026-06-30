@@ -899,7 +899,7 @@
 <body>
     <div class="header">
         <h1>US GDP Nowcast &middot; Model Details</h1>
-        <p class="timestamp">Updated Jun 29, 2026 17:47</p>
+        <p class="timestamp">Updated Jun 29, 2026 20:21</p>
     </div>
 
     <div class="page-nav"><a href="dashboard.html">&larr; Back to the nowcast</a></div>
@@ -1021,7 +1021,10 @@
         <p class="comparison-footnote">
         Two toggles. <strong>Horizon</strong> shows the board 8 weeks out, 4 weeks out, or the day before the release;
         each horizon is scored on <em>common support</em> (every model on the same quarters), so the post-COVID sample
-        shrinks to 19 (8wk) / 20 (4wk) quarters where GDPNow lacks the earliest origins. <strong>Score vs</strong>
+        shrinks to 19 (8wk) / 20 (4wk) quarters. That truncation is a GDPNow limitation: it cannot start
+        nowcasting a quarter until the prior quarter&rsquo;s advance GDP prints, and the 2025&ndash;26 government-shutdown
+        delays to the BEA calendar left it with no early-horizon estimate for the most recent quarters &mdash; whereas
+        our models nowcast continuously and do cover them (a genuine timeliness disadvantage of GDPNow). <strong>Score vs</strong>
         re-scores the <em>same</em> nowcasts against the final (third) GDP estimate instead of the advance print, which
         separates genuine nowcast error from advance-print noise (the advance&rarr;third revision is itself
         ~0.76pp RMS over the 20 scored post-COVID quarters; quarters without a third estimate yet are
@@ -1077,9 +1080,8 @@
         </table>
         <p class="comparison-footnote">Probabilistic scores (proper scoring rules, accruing as predictive bands are captured): <strong>Chronos-2</strong> CRPS 1.18, 80% coverage 20% &middot; <strong>LASSO bridge</strong> CRPS 0.90, 90% coverage 100%. CRPS generalises MAE to the whole predictive distribution (lower is better); coverage compares the realised hit-rate to the band’s nominal level. DFM, Tuned Bayesian DFM and the ensemble join once their bands are logged.</p>
               <p class="comparison-footnote">Leader at this horizon: <strong>Tuned Bayesian DFM</strong>.
-              Scored on <em>common support</em> — every model on the identical 6-quarter set (GDPNow lacks
-              the earliest origins for some quarters, so the sample shrinks at the longer horizons).
-              Diebold-Mariano p tests whether a model's accuracy differs from the production DFM's.</p>
+              Scored on <em>common support</em> &mdash; every model on the identical 6-quarter set.
+              Diebold-Mariano p tests whether a model&rsquo;s accuracy differs from the production DFM&rsquo;s. Fewer than the 8 quarters of the final board because <strong>Atlanta Fed GDPNow</strong> has no estimate this far out for the most recent quarter(s): it cannot start nowcasting a quarter until the prior quarter&rsquo;s advance GDP is published, and the 2025&ndash;26 government-shutdown delays to the BEA calendar pushed those releases so late that GDPNow produced no 8-/4-week-out nowcast for them. Our DFM and the other models nowcast continuously and do cover those quarters &mdash; a genuine timeliness disadvantage of GDPNow&rsquo;s component-aggregation approach. Common support then drops those quarters so every model is ranked on the same set.</p>
             </div><div id="hr-details-panel-1_month_out" class="hr-hz-panel hr-collapsed">
               <h4>4 weeks out &middot; standings (common support: 7 quarters, 2024Q2&ndash;2025Q4; vs advance GDP)</h4>
               <div id="hr-details-1_month_out-18" class="altair-chart"></div>
@@ -1092,9 +1094,8 @@
         </table>
         <p class="comparison-footnote">Probabilistic scores (proper scoring rules, accruing as predictive bands are captured): <strong>LASSO bridge</strong> CRPS 1.05, 90% coverage 80% &middot; <strong>Chronos-2</strong> CRPS 1.40, 80% coverage 40%. CRPS generalises MAE to the whole predictive distribution (lower is better); coverage compares the realised hit-rate to the band’s nominal level. DFM, Tuned Bayesian DFM and the ensemble join once their bands are logged.</p>
               <p class="comparison-footnote">Leader at this horizon: <strong>Tuned Bayesian DFM</strong>.
-              Scored on <em>common support</em> — every model on the identical 7-quarter set (GDPNow lacks
-              the earliest origins for some quarters, so the sample shrinks at the longer horizons).
-              Diebold-Mariano p tests whether a model's accuracy differs from the production DFM's.</p>
+              Scored on <em>common support</em> &mdash; every model on the identical 7-quarter set.
+              Diebold-Mariano p tests whether a model&rsquo;s accuracy differs from the production DFM&rsquo;s. Fewer than the 8 quarters of the final board because <strong>Atlanta Fed GDPNow</strong> has no estimate this far out for the most recent quarter(s): it cannot start nowcasting a quarter until the prior quarter&rsquo;s advance GDP is published, and the 2025&ndash;26 government-shutdown delays to the BEA calendar pushed those releases so late that GDPNow produced no 8-/4-week-out nowcast for them. Our DFM and the other models nowcast continuously and do cover those quarters &mdash; a genuine timeliness disadvantage of GDPNow&rsquo;s component-aggregation approach. Common support then drops those quarters so every model is ranked on the same set.</p>
             </div><div id="hr-details-panel-final" class="hr-hz-panel">
               <h4>Day before (final) &middot; standings (common support: 8 quarters, 2024Q2&ndash;2026Q1; vs advance GDP)</h4>
               <div id="hr-details-final-19" class="altair-chart"></div>
@@ -1107,9 +1108,8 @@
         </table>
         <p class="comparison-footnote">Probabilistic scores (proper scoring rules, accruing as predictive bands are captured): <strong>Chronos-2</strong> CRPS 1.17, 80% coverage 40% &middot; <strong>LASSO bridge</strong> CRPS 1.16, 90% coverage 60%. CRPS generalises MAE to the whole predictive distribution (lower is better); coverage compares the realised hit-rate to the band’s nominal level. DFM, Tuned Bayesian DFM and the ensemble join once their bands are logged.</p>
               <p class="comparison-footnote">Leader at this horizon: <strong>Atlanta Fed GDPNow</strong>.
-              Scored on <em>common support</em> — every model on the identical 8-quarter set (GDPNow lacks
-              the earliest origins for some quarters, so the sample shrinks at the longer horizons).
-              Diebold-Mariano p tests whether a model's accuracy differs from the production DFM's.</p>
+              Scored on <em>common support</em> &mdash; every model on the identical 8-quarter set.
+              Diebold-Mariano p tests whether a model&rsquo;s accuracy differs from the production DFM&rsquo;s.</p>
             </div>
     </div>
     <script>
